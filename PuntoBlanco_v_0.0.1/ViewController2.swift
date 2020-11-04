@@ -8,19 +8,21 @@
 import UIKit
 
 class ViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate {
-    var tablaPrueba = [["hgh","ggg","ggg"],["jj","jj"],["yy"],["q"]]
+    var tablaPrueba = [["Meditacion 1","Meditacion 2","Meditacion 3"],["Meditacion 1","Meditacion 2"],["Meditacion 3"],["Meditacion 4"]]
     var posTabla = 0
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tablaPrueba[posTabla].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
+         let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
+
         cell.textLabel?.text = tablaPrueba[posTabla][indexPath.row]
         
         cell.backgroundView = UIImageView(image: UIImage(named: "meditacion_1.jpg"))
         
         cell.backgroundView?.alpha = 0.4
+        
         return cell
     }
     
@@ -66,14 +68,21 @@ class ViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+         let vistaDetalle = segue.destination as! ViewController3
+        if (table.indexPathForSelectedRow == nil){
+            vistaDetalle.nombre = tablaPrueba[posTabla][0]
+            
+        }
+        else {
+            vistaDetalle.nombre = tablaPrueba[posTabla][table.indexPathForSelectedRow!.row]
+    
+        }
     }
-    */
+    
 
 }
