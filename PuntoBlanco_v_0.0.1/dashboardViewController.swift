@@ -38,6 +38,11 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil{
             let vistaConf = segue.destination as! ConfiguracionViewController
             vistaConf.unUsuario = user
         }
+        else if segue.identifier == "notificacion"{
+            let vistaNotificacion = segue.destination as! ViewController2
+            vistaNotificacion.popoverPresentationController!.delegate = self
+            
+        }
         
     }
     
