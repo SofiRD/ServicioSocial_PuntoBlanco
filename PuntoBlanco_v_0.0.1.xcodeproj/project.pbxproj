@@ -22,6 +22,9 @@
 		4F69D829253D29A700C3863F /* dashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69D828253D29A700C3863F /* dashboardViewController.swift */; };
 		4F69D82B253D2CE400C3863F /* ConfiguracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69D82A253D2CE400C3863F /* ConfiguracionViewController.swift */; };
 		7A5EFF4A45269FDE9DEDE4D5 /* Pods_PuntoBlanco_v_0_0_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2DE9070E3088A52CA28D93 /* Pods_PuntoBlanco_v_0_0_1.framework */; };
+		BE66B5A12565A56F00A5FB61 /* ViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B5A02565A56F00A5FB61 /* ViewController5.swift */; };
+		BE66B5A32566218A00A5FB61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE66B5A22566218A00A5FB61 /* GoogleService-Info.plist */; };
+		BE66B5A5256630F000A5FB61 /* ViewControllerRitmoFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B5A4256630F000A5FB61 /* ViewControllerRitmoFinal.swift */; };
 		BE73D8E725525538002019D2 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73D8E625525538002019D2 /* ViewController2.swift */; };
 		BE73D8E92552F2B8002019D2 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73D8E82552F2B8002019D2 /* ViewController3.swift */; };
 		BE73D8ED25532813002019D2 /* ViewControllerAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73D8EC25532813002019D2 /* ViewControllerAudio.swift */; };
@@ -48,6 +51,9 @@
 		4F69D82A253D2CE400C3863F /* ConfiguracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracionViewController.swift; sourceTree = "<group>"; };
 		7777CC3673E6AF232CAFA84A /* Pods-PuntoBlanco_v_0.0.1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoBlanco_v_0.0.1.release.xcconfig"; path = "Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1.release.xcconfig"; sourceTree = "<group>"; };
 		83F8C10AEB5F08A3D0369B63 /* Pods-PuntoBlanco_v_0.0.1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoBlanco_v_0.0.1.debug.xcconfig"; path = "Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1.debug.xcconfig"; sourceTree = "<group>"; };
+		BE66B5A02565A56F00A5FB61 /* ViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController5.swift; sourceTree = "<group>"; };
+		BE66B5A22566218A00A5FB61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BE66B5A4256630F000A5FB61 /* ViewControllerRitmoFinal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRitmoFinal.swift; sourceTree = "<group>"; };
 		BE73D8E625525538002019D2 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		BE73D8E82552F2B8002019D2 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		BE73D8EC25532813002019D2 /* ViewControllerAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAudio.swift; sourceTree = "<group>"; };
@@ -94,6 +100,8 @@
 				4F544354253CDAF7005F9AF6 /* SceneDelegate.swift */,
 				4F544356253CDAF7005F9AF6 /* ViewController.swift */,
 				4F544358253CDAF7005F9AF6 /* Main.storyboard */,
+				BE66B5A4256630F000A5FB61 /* ViewControllerRitmoFinal.swift */,
+				BE66B5A02565A56F00A5FB61 /* ViewController5.swift */,
 				4F2E54EC25549093009140CA /* ViewControllerNotificacion.swift */,
 				BE73D8EC25532813002019D2 /* ViewControllerAudio.swift */,
 				BE73D8E82552F2B8002019D2 /* ViewController3.swift */,
@@ -109,6 +117,7 @@
 				4F54435B253CDAF9005F9AF6 /* Assets.xcassets */,
 				4F54435D253CDAF9005F9AF6 /* LaunchScreen.storyboard */,
 				4F544360253CDAF9005F9AF6 /* Info.plist */,
+				BE66B5A22566218A00A5FB61 /* GoogleService-Info.plist */,
 			);
 			path = PuntoBlanco_v_0.0.1;
 			sourceTree = "<group>";
@@ -164,6 +173,7 @@
 				TargetAttributes = {
 					4F54434E253CDAF7005F9AF6 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -192,6 +202,7 @@
 			files = (
 				BE73D8EF25532CD4002019D2 /* Elegy2.mp3 in Resources */,
 				4F54435F253CDAF9005F9AF6 /* LaunchScreen.storyboard in Resources */,
+				BE66B5A32566218A00A5FB61 /* GoogleService-Info.plist in Resources */,
 				4F54435C253CDAF9005F9AF6 /* Assets.xcassets in Resources */,
 				4F54435A253CDAF7005F9AF6 /* Main.storyboard in Resources */,
 			);
@@ -250,6 +261,7 @@
 				4F69D827253D205C00C3863F /* Meditacion.swift in Sources */,
 				BE73D8E92552F2B8002019D2 /* ViewController3.swift in Sources */,
 				4F69D823253D1F2800C3863F /* Evento.swift in Sources */,
+				BE66B5A12565A56F00A5FB61 /* ViewController5.swift in Sources */,
 				4F544357253CDAF7005F9AF6 /* ViewController.swift in Sources */,
 				BE73D8E725525538002019D2 /* ViewController2.swift in Sources */,
 				4F2E54ED25549093009140CA /* ViewControllerNotificacion.swift in Sources */,
@@ -258,6 +270,7 @@
 				4F69D829253D29A700C3863F /* dashboardViewController.swift in Sources */,
 				4F69D825253D1FDA00C3863F /* Reto.swift in Sources */,
 				4F544368253D0BCA005F9AF6 /* Estadisticas.swift in Sources */,
+				BE66B5A5256630F000A5FB61 /* ViewControllerRitmoFinal.swift in Sources */,
 				4F69D821253D1D3800C3863F /* Usuario.swift in Sources */,
 				4F544355253CDAF7005F9AF6 /* SceneDelegate.swift in Sources */,
 			);
@@ -407,6 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PuntoBlanco_v_0.0.1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
@@ -416,6 +430,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ITESM.PuntoBlanco-v-0-0-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -427,6 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PuntoBlanco_v_0.0.1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;

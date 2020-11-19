@@ -7,6 +7,8 @@
 
 import UIKit
 import AVFoundation
+//import HGCircularSlider
+import Firebase
 
 class ViewControllerAudio: UIViewController {
 
@@ -20,9 +22,25 @@ class ViewControllerAudio: UIViewController {
     var NombreMedi : String!
     
    var player : AVAudioPlayer?
+    
         
+       /* let circularSlider = RangeCircularSlider(frame: CGRect(x: 0, y: 0, width: 260, height: 260))
+        */
+    
         override func viewDidLoad() {
+            
+            
             super.viewDidLoad()
+           /* circularSlider.startThumbImage = UIImage(named: "Bedtime")
+            circularSlider.endThumbImage = UIImage(named: "Wake")
+
+            let dayInSeconds = 24 * 60 * 60
+            circularSlider.maximumValue = CGFloat(dayInSeconds)
+
+            circularSlider.startPointValue = 1 * 60 * 60
+            circularSlider.endPointValue = 8 * 60 * 60
+            circularSlider.numberOfRounds = 2
+            self.view.addSubview(circularSlider)*/
             
             tfName.text = NombreMedi
             
@@ -66,6 +84,9 @@ class ViewControllerAudio: UIViewController {
             moveM.value = Float(player!.currentTime)
             if moveM.value >= moveM.maximumValue * 0.999{
                 nexxt.isHidden = false
+              var ref: DatabaseReference!
+                ref = Database.database().reference(fromURL: "https://punto-b84a8.firebaseio.com/")
+                ref.updateChildValues(["NombreMedi": NombreMedi])
                 
             }
         }

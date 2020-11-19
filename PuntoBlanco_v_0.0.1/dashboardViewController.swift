@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class dashboardViewController: UIViewController, protocoloModificarPerfil{
+class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPopoverPresentationControllerDelegate{
     
     var user : Usuario = Usuario(idUsuario: 1, nombre: "Sebastian Diaz", correo: "sebastian@gmail.com", contrasena: "sebastian1234", imagenPerfil: UIImage(named: "foto"))
     
@@ -19,6 +19,7 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: false)
 
         // Do any additional setup after loading the view.
         lbNombreUsuario.text = user.nombre
@@ -43,6 +44,8 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil{
             vistaNotificacion.popoverPresentationController!.delegate = self
             
         }
+      
+        
         
     }
     
