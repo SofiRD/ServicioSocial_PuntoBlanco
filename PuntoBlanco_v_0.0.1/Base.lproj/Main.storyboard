@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
                             <userLayoutGuide location="34" affinity="minX"/>
-                            <userLayoutGuide location="341" affinity="minX"/>
+                            <userLayoutGuide location="340" affinity="minX"/>
                         </userGuides>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kbx-st-ym6">
@@ -59,7 +59,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="POb-32-Kzq">
                                                         <rect key="frame" x="0.0" y="58" width="339" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -80,7 +80,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sRn-hD-R7P"/>
-                                                    <segue destination="dJq-vs-gFt" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="fJw-Vd-Ihw"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -137,6 +136,7 @@
                     <connections>
                         <outlet property="tfContra" destination="POb-32-Kzq" id="s7i-bb-7Mp"/>
                         <outlet property="tfCorr" destination="kSy-Ga-Ace" id="LOd-X8-goZ"/>
+                        <segue destination="dJq-vs-gFt" kind="presentation" identifier="login" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="vdL-5A-5iG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -245,7 +245,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CYP-rD-1AJ" kind="show" identifier="medi" id="Lso-Dz-Geg"/>
+                                    <segue destination="a1q-ZK-FkF" kind="show" identifier="medi" id="Lso-Dz-Geg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0r-k7-e27">
@@ -364,6 +364,14 @@
                                 <color key="textColor" red="0.24933150060000001" green="0.70466321239999996" blue="0.6906419533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyV-QW-PMn">
+                                <rect key="frame" x="296" y="153" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="dJq-vs-gFt" eventType="touchUpInside" id="wF5-2o-hwF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="KSi-wl-wk4"/>
@@ -373,11 +381,12 @@
                         <outlet property="imagenPerfilUsuario" destination="wSw-DK-9ky" id="VEV-60-sP9"/>
                         <outlet property="lbNombreUsuario" destination="kxC-Cu-ypQ" id="e0p-DJ-uTa"/>
                         <outlet property="lbSaludoNombre" destination="Tpa-rn-9AA" id="YvC-t0-9NQ"/>
+                        <outlet property="logOut" destination="FyV-QW-PMn" id="1Ud-fG-Dpm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3y-t7-NPt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1407.2" y="142.57871064467767"/>
+            <point key="canvasLocation" x="2026" y="181"/>
         </scene>
         <!--View Controller Ritmo Final-->
         <scene sceneID="GNh-YC-ZRc">
@@ -432,7 +441,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="o8N-Ai-Zla" kind="presentation" id="m6O-F1-B5g"/>
+                                    <segue destination="o8N-Ai-Zla" kind="show" id="m6O-F1-B5g"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Al finalizar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V43-2E-lBC">
@@ -453,7 +462,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gke-cY-eZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4756" y="84.107946026986511"/>
+            <point key="canvasLocation" x="6634.3999999999996" y="84.107946026986511"/>
         </scene>
         <!--View Controller5-->
         <scene sceneID="0Wc-1K-sNY">
@@ -517,7 +526,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="nobien"/>
                                 <connections>
-                                    <action selector="nobien:" destination="o8N-Ai-Zla" eventType="touchUpInside" id="TWG-Uk-nkX"/>
+                                    <action selector="nobien:" destination="o8N-Ai-Zla" eventType="touchUpInside" id="hji-wV-8Jb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BC6-rT-Ycn">
@@ -571,6 +580,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="uYI-M5-I0l"/>
                     </view>
+                    <navigationItem key="navigationItem" id="r4b-5T-sbl"/>
                     <connections>
                         <outlet property="feliz" destination="qJS-dM-Sh8" id="P9B-6v-myD"/>
                         <outlet property="mal" destination="BC6-rT-Ycn" id="qBO-jv-IP3"/>
@@ -582,7 +592,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQt-Ij-Y1j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5548" y="99.400299850074973"/>
+            <point key="canvasLocation" x="7426.3999999999996" y="99.400299850074973"/>
         </scene>
         <!--Estadisticas-->
         <scene sceneID="hTk-sg-vpP">
@@ -1071,7 +1081,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqa-E3-ljk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2272.8000000000002" y="94.902548725637189"/>
+            <point key="canvasLocation" x="4151.1999999999998" y="94.902548725637189"/>
         </scene>
         <!--RegistrarPrimero-->
         <scene sceneID="lLQ-eY-FdE">
@@ -1147,7 +1157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQ4-Om-tB7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3096.8000000000002" y="94.902548725637189"/>
+            <point key="canvasLocation" x="4975.1999999999998" y="94.902548725637189"/>
         </scene>
         <!--View Controller Audio-->
         <scene sceneID="ZVg-qd-2Nd">
@@ -1200,7 +1210,7 @@
                                     <color key="titleColor" red="0.20928373929999999" green="0.56475043300000005" blue="0.55294585230000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="e2X-CD-UKx" kind="presentation" id="znB-EA-Oca"/>
+                                    <segue destination="e2X-CD-UKx" kind="show" id="znB-EA-Oca"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre Meditación" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLg-xa-dyn">
@@ -1223,7 +1233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xd2-5D-nQm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3972" y="94.902548725637189"/>
+            <point key="canvasLocation" x="5850.3999999999996" y="94.902548725637189"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ar3-TE-mOT">
@@ -1242,6 +1252,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WUU-Bg-QaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-543.20000000000005" y="142.57871064467767"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uyL-v5-Ekw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a1q-ZK-FkF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="q04-OL-waT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9iS-1O-MYk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CYP-rD-1AJ" kind="relationship" relationship="rootViewController" id="E9r-iQ-Psz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jMx-Lh-7Wi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3212" y="94.902548725637189"/>
         </scene>
     </scenes>
     <resources>

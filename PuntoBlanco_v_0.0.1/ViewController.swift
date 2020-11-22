@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tfCorr: UITextField!
     @IBOutlet weak var tfContra: UITextField!
-    
+    var userReference :DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -29,11 +29,29 @@ class ViewController: UIViewController {
         }
         print(email)
         print(password)
-        Auth.auth().signIn(withEmail: email, password: password){ (result, error) in
+        
+        Auth.auth().signIn(withEmail: email, password: password){(result: AuthDataResult?, error) in
             if error != nil {
                 print("error")
+                return
             }
+            
+            let uid = result?.user.uid
+            
+          let ref = Database.database().reference(fromURL: "https://punto-b84a8.firebaseio.com/")
+        self.userReference = ref.child("users").child(uid!)
+            self.performSegue(withIdentifier: "login", sender: nil)
         
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "login"{
+        print(self.userReference)
+        let vista = segue.destination as! dashboardViewController
+        vista.userReference = self.userReference
         }
     }
 }

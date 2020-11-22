@@ -12,6 +12,7 @@ import Firebase
 
 class ViewControllerAudio: UIViewController {
 
+    var userReference :DatabaseReference!
     @IBOutlet weak var tfName: UILabel!
     @IBOutlet weak var moveM: UISlider!
     @IBOutlet weak var nexxt: UIButton!
@@ -84,9 +85,8 @@ class ViewControllerAudio: UIViewController {
             moveM.value = Float(player!.currentTime)
             if moveM.value >= moveM.maximumValue * 0.999{
                 nexxt.isHidden = false
-              var ref: DatabaseReference!
-                ref = Database.database().reference(fromURL: "https://punto-b84a8.firebaseio.com/")
-                ref.updateChildValues(["NombreMedi": NombreMedi])
+              
+                userReference.updateChildValues(["NombreMedi": NombreMedi])
                 
             }
         }
@@ -103,13 +103,21 @@ class ViewControllerAudio: UIViewController {
                       
                                     }
         }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vistaDetalle = segue.destination as! ViewControllerRitmoFinal
+        vistaDetalle.userReference = userReference
+        
+       // navigationController?.popViewController(animated: false)
+        }
+    override func viewWillDisappear(_ animated: Bool) {
+        player?.stop()
+    }
+     
     }
 
 
 
-    
-
-    /*
+/*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import Firebase
+
 
 
 
 class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPopoverPresentationControllerDelegate{
     
+    var userReference : DatabaseReference!
     var user : Usuario = Usuario(idUsuario: 1, nombre: "Sebastian Diaz", correo: "sebastian@gmail.com", contrasena: "sebastian1234", imagenPerfil: UIImage(named: "foto"))
     
+    @IBOutlet weak var logOut: UIButton!
     @IBOutlet weak var lbNombreUsuario: UILabel!
     @IBOutlet weak var imagenPerfilUsuario: UIImageView!
     @IBOutlet weak var lbSaludoNombre: UILabel!
@@ -27,7 +32,11 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
         lbSaludoNombre.text = user.nombre
     }
     
-
+    
+    @IBAction func logOut(_ sender: UIButton) {
+        self.presentingViewController?.dismiss(animated: true)
+    }
+    
     
     // MARK: - Navigation
 
@@ -43,6 +52,11 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
             let vistaNotificacion = segue.destination as! ViewController2
             vistaNotificacion.popoverPresentationController!.delegate = self
             
+        } else {
+            let vis = segue.destination as! UINavigationController
+            let vista = vis.topViewController as! ViewController2
+            print(userReference)
+            vista.userReference = userReference
         }
       
         

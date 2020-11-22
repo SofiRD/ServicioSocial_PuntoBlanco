@@ -13,7 +13,7 @@ class ViewController3: UIViewController {
     
     @IBOutlet weak var tfRitmo: UITextField!
     var nombre :String!
-    
+    var userReference :DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad() 
         // Do any additional setup after loading the view.
@@ -24,16 +24,19 @@ class ViewController3: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       var ref: DatabaseReference!
-        ref = Database.database().reference(fromURL: "https://punto-b84a8.firebaseio.com/")
+       
         if (tfRitmo.text==""){
             tfRitmo.text = "0"
         }
-        ref.updateChildValues(["RitmoInicial": Int(tfRitmo.text!)!])
+        print(userReference)
+        userReference.updateChildValues(["RitmoInicial": Int(tfRitmo.text!)!])
         
         let vistaDetalle = segue.destination as! ViewControllerAudio
         vistaDetalle.NombreMedi = nombre
-        navigationController?.popViewController(animated: false)
+        //navigationController?.popViewController(animated: false)
+        print(navigationController)
+        print(self.navigationController)
+        vistaDetalle.userReference = userReference
     }
 
 }

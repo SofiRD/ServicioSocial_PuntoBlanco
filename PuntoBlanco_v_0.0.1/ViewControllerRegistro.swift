@@ -28,9 +28,7 @@ class ViewControllerRegistro: UIViewController {
     @IBAction func registrar(_ sender: UIButton) {
         var ref: DatabaseReference!
         ref = Database.database().reference(fromURL: "https://punto-b84a8.firebaseio.com/")
-        ref.updateChildValues(["Nombre": tfNom.text!])
-        ref.updateChildValues(["Apellido" : tfApell.text!])
-        //ref.updateChildValues(["Correo" : tfCorr.text!])
+        
         //ref.updateChildValues(["Contraseña" : tfContra.text!])
         
         guard let email = tfCorr.text, let password = tfContra.text else{
@@ -50,6 +48,13 @@ class ViewControllerRegistro: UIViewController {
                 db.collection("users").addDocument(data: ["PrimNom" : self.tfNom.text!, "Apellido" : self.tfApell.text!, "uid" : result!.user.uid])
                
                 }
+            let uid = result?.user.uid
+                
+              var ref = Database.database().reference(fromURL: "https://punto-b84a8.firebaseio.com/")
+            ref = ref.child("users").child(uid!)
+            ref.updateChildValues(["Nombre": self.tfNom.text!])
+            ref.updateChildValues(["Apellido" : self.tfApell.text!])
+            ref.updateChildValues(["Correo" : self.tfCorr.text!])
             }
         }
     

@@ -10,7 +10,7 @@ import Firebase
 
 class ViewController5: UIViewController{
     
-    
+    var userReference :DatabaseReference!
     var estado = 0
     var texto :String!
     
@@ -26,51 +26,60 @@ class ViewController5: UIViewController{
 
         // Do any additional setup after loading the view.
     }
+    func resetFaces(){
+        feliz.layer.opacity = 1
+        medio.layer.opacity = 1
+        meh.layer.opacity = 1
+        nobien.layer.opacity = 1
+        mal.layer.opacity = 1
+    }
+    
     
     @IBAction func feliz(_ sender: UIButton) {
         estado = 5
-        feliz.imageView?.alpha = 0.5
-        medio.imageView?.alpha = 1
-        meh.imageView?.alpha = 1
-        nobien.imageView?.alpha = 1
-        mal.imageView?.alpha = 1    }
+        resetFaces()
+        feliz.layer.opacity = 0.5
+        //feliz.layer.borderColor = CGColor.init(srgbRed: 200, green: 30, blue: 30, alpha: 0)
+        
+    }
     @IBAction func medio(_ sender: UIButton) {
         estado = 4
-        medio.imageView?.alpha = 0.5
-        feliz.imageView?.alpha = 1
-        meh.imageView?.alpha = 1
-        nobien.imageView?.alpha = 1
-        mal.imageView?.alpha = 1
+        resetFaces()
+        medio.layer.opacity = 0.5
+        
+        //medio.layer.borderColor = CGColor.init(srgbRed: 200, green: 30, blue: 30, alpha: 0)
     }
     
     @IBAction func meh(_ sender: UIButton) {
         estado = 3
-        meh.imageView?.alpha = 0.5
-        medio.imageView?.alpha = 1
-        feliz.imageView?.alpha = 1
-        nobien.imageView?.alpha = 1
-        mal.imageView?.alpha = 1    }
-    @IBAction func nobien(_ sender: UIButton) {
+       resetFaces()
+        meh.layer.opacity = 0.5
+        //meh.layer.borderColor = CGColor.init(srgbRed: 200, green: 30, blue: 30, alpha: 0)
+        
+    }
+    
+    @IBAction func nobien(_ sender: Any) {
         estado = 2
-        nobien.imageView?.alpha = 0.5
-        medio.imageView?.alpha = 1
-        meh.imageView?.alpha = 1
-        feliz.imageView?.alpha = 1
-        mal.imageView?.alpha = 1    }
+        resetFaces()
+        nobien.layer.opacity = 0.5
+        //nobien.layer.borderColor = CGColor.init(srgbRed: 200, green: 30, blue: 30, alpha: 0)
+    }
+    
     @IBAction func mal(_ sender: UIButton) {
         estado = 1
-        mal.backgroundColor = UIColor.red
-        medio.imageView?.alpha = 1
-        meh.imageView?.alpha = 1
-        nobien.imageView?.alpha = 1
-        feliz.imageView?.alpha = 1    }
+        resetFaces()
+        mal.layer.opacity = 0.5
+        //mal.layer.borderColor = CGColor.init(srgbRed: 200, green: 30, blue: 30, alpha: 0)
+    }
     
     @IBAction func guardar(_ sender: UIButton) {
-       var ref: DatabaseReference!
-        ref = Database.database().reference(fromURL: "https://punto-b84a8.firebaseio.com/")
-        ref.updateChildValues(["Notas": notas.text!])
+       //var ref: DatabaseReference!
+       // ref = Database.database().reference(fromURL: "https://punto-b84a8.firebaseio.com/")
+        userReference.updateChildValues(["Notas": notas.text!])
         
-        ref.updateChildValues(["Estado" : estado])
+        userReference.updateChildValues(["Estado" : estado])
+        
+        navigationController?.popToRootViewController(animated: true)
     }
     
     /*

@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate {
     
+    var userReference :DatabaseReference!
     var tablaPrueba = [["Meditacion 1","Meditacion 2","Meditacion 3"],["Meditacion 1","Meditacion 2"],["Meditacion 3"],["Meditacion 4"]]
     var posTabla = 0
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,9 +83,12 @@ class ViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         }
         else {
             vistaDetalle.nombre = tablaPrueba[posTabla][table.indexPathForSelectedRow!.row]
-    
+            
         }
-        navigationController?.popViewController(animated: false)
+        print(userReference)
+        vistaDetalle.userReference = userReference
+        
+        
         
     }
     
