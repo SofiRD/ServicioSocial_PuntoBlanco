@@ -6,25 +6,26 @@
 //
 
 import UIKit
-import FirebaseFirestore
-import FirebaseAuth
 import Firebase
-
+import FirebaseAuth
+import FirebaseFirestore
 //prueba
 
 class ViewController: UIViewController {
 
+    
+    
     @IBOutlet weak var tfCorr: UITextField!
     @IBOutlet weak var tfContra: UITextField!
     var userReference :DatabaseReference!
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        super.viewDidLoad()        
     }
 
 
     @IBAction func login(_ sender: Any) {
+        //self.performSegue(withIdentifier: "login", sender: nil)
         guard let email = tfCorr.text, let password = tfContra.text else{
             print("Correo invalido")
             return
@@ -54,6 +55,7 @@ class ViewController: UIViewController {
         print(self.userReference)
         let vista = segue.destination as! dashboardViewController
         vista.userReference = self.userReference
+            
         }
     }
 }

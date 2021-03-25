@@ -47,19 +47,32 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
         if segue.identifier == "configurar"{
             let vistaConf = segue.destination as! ConfiguracionViewController
             vistaConf.unUsuario = user
+            vistaConf.userReference = userReference
         }
         else if segue.identifier == "notificacion"{
             let vistaNotificacion = segue.destination as! ViewController2
             vistaNotificacion.popoverPresentationController!.delegate = self
+            vistaNotificacion.userReference = userReference
             
-        } else {
+        } else if segue.identifier == "meditar"{
             let vis = segue.destination as! UINavigationController
             let vista = vis.topViewController as! ViewController2
             print(userReference)
             vista.userReference = userReference
+        }  else if segue.identifier == "segEventos"{
+            let vis = segue.destination as! UINavigationController
+            let vista = vis.topViewController as! TableViewControllerEventos
+            print(userReference)
+            vista.userReference = userReference
+        }  else if segue.identifier == "segRetos"{
+            let vis = segue.destination as! UINavigationController
+            let vista = vis.topViewController as! TableViewControllerRetos
+            print(userReference)
+            vista.userReference = userReference
+        } else if segue.identifier == "estadisticas"{
+            let vistaNotificacion = segue.destination as! Estadisticas
+            vistaNotificacion.userReference = userReference
         }
-      
-        
         
     }
     

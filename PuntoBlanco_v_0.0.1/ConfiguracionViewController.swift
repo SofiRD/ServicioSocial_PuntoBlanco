@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 protocol protocoloModificarPerfil{
     func modificar(us: Usuario)
@@ -13,6 +14,7 @@ protocol protocoloModificarPerfil{
 
 class ConfiguracionViewController: UIViewController {
     
+     var userReference :DatabaseReference!
     @IBOutlet weak var tfNombre: UITextField!
     @IBOutlet weak var tfCorreo: UITextField!
     @IBOutlet weak var imagenPerfil: UIImageView!
@@ -21,7 +23,8 @@ class ConfiguracionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("configuracion:")
+        print(userReference)
         // Do any additional setup after loading the view.
         tfNombre?.text = unUsuario?.nombre
         tfCorreo?.text = unUsuario?.correo
