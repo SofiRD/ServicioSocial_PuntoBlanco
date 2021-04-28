@@ -13,10 +13,12 @@ class ViewControllerEventosInfo: UIViewController {
     var unEvento : Evento!
      var userReference :DatabaseReference!
 
+    @IBOutlet weak var eventPlaceholder: UIView!
     @IBOutlet weak var lbNombreEvento: UILabel!
     @IBOutlet weak var lbFechaEvento: UILabel!
     @IBOutlet weak var lbDescripcionEvento: UILabel!
     
+    @IBOutlet weak var imagenEvento: UIImageView!
     @IBOutlet weak var btRegistrar: UIButton!
     @IBOutlet weak var lbRegistro: UILabel!
 
@@ -30,7 +32,8 @@ class ViewControllerEventosInfo: UIViewController {
         lbRegistro.alpha = 0
         lbNombreEvento.text = unEvento.nombreEvento
         lbFechaEvento.text = unEvento.fecha
-        lbDescripcionEvento.text = unEvento.descripcion
+        //lbDescripcionEvento.text = unEvento.descripcion
+        imagenEvento.image = unEvento.imagen
         
         if(!unEvento.isRegistered){
             lbRegistro.alpha = 0
@@ -38,7 +41,15 @@ class ViewControllerEventosInfo: UIViewController {
         }else{
             lbRegistro.alpha = 1
             btRegistrar.setTitle("Cancelar registro", for: .normal)
+            btRegistrar.backgroundColor      = UIColor.red
         }
+        
+        eventPlaceholder.layer.cornerRadius = eventPlaceholder.frame.size.width / 18
+        eventPlaceholder.clipsToBounds = true
+        
+        imagenEvento.layer.cornerRadius = imagenEvento.frame.size.width / 15
+        imagenEvento.alpha = 0.5
+        imagenEvento.clipsToBounds = true
 
     }
     
@@ -48,11 +59,13 @@ class ViewControllerEventosInfo: UIViewController {
             unEvento.isRegistered = false
             lbRegistro.alpha = 0
             btRegistrar.setTitle("Registrarme", for: .normal)
+            btRegistrar.backgroundColor = #colorLiteral(red: 0, green: 0.5690457821, blue: 0.5746168494, alpha: 1)
             //aquí se debe manipular la base de datos
         }else{
             unEvento.isRegistered = true
             lbRegistro.alpha = 1
             btRegistrar.setTitle("Cancelar registro", for: .normal)
+            btRegistrar.backgroundColor = .red
             //aquí se debe manipular la base de datos
         }
     }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2020BBB80C3DD649B4E85CB5 /* Pods_PuntoBlanco_v_0_0_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CDA361A4C55AB82F611F9E /* Pods_PuntoBlanco_v_0_0_1.framework */; };
 		4F2E54ED25549093009140CA /* ViewControllerNotificacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2E54EC25549093009140CA /* ViewControllerNotificacion.swift */; };
 		4F544353253CDAF7005F9AF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F544352253CDAF7005F9AF6 /* AppDelegate.swift */; };
 		4F544355253CDAF7005F9AF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F544354253CDAF7005F9AF6 /* SceneDelegate.swift */; };
@@ -26,6 +25,15 @@
 		4FC158C9256B0B92005B6A90 /* TableViewControllerEventos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC158C8256B0B92005B6A90 /* TableViewControllerEventos.swift */; };
 		4FC158CB256B11A1005B6A90 /* TableViewControllerRetos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC158CA256B11A1005B6A90 /* TableViewControllerRetos.swift */; };
 		4FC158CD256B1202005B6A90 /* ViewControllerRetosInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC158CC256B1202005B6A90 /* ViewControllerRetosInfo.swift */; };
+		750F8F70263121CE005411C2 /* historialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750F8F6F263121CE005411C2 /* historialViewController.swift */; };
+		750F8F7326312C24005411C2 /* historialMeditacionesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750F8F7226312C24005411C2 /* historialMeditacionesTableViewController.swift */; };
+		750F8F7626312C40005411C2 /* historialEventosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750F8F7526312C40005411C2 /* historialEventosTableViewController.swift */; };
+		750F8F7926312C4F005411C2 /* historialNotasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750F8F7826312C4F005411C2 /* historialNotasTableViewController.swift */; };
+		750F8F7C26313075005411C2 /* hMeditacionesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750F8F7B26313075005411C2 /* hMeditacionesTableViewCell.swift */; };
+		750F8F7F263130CE005411C2 /* hEventosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750F8F7E263130CE005411C2 /* hEventosTableViewCell.swift */; };
+		750F8F82263130D9005411C2 /* hNotasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750F8F81263130D9005411C2 /* hNotasTableViewCell.swift */; };
+		7512B4F226268AD200162732 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7512B4F126268AD200162732 /* EventTableViewCell.swift */; };
+		7539E3BF2627F35400266963 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539E3BE2627F35400266963 /* EventCollectionViewCell.swift */; };
 		BE66B5A12565A56F00A5FB61 /* ViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B5A02565A56F00A5FB61 /* ViewController5.swift */; };
 		BE66B5A5256630F000A5FB61 /* ViewControllerRitmoFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B5A4256630F000A5FB61 /* ViewControllerRitmoFinal.swift */; };
 		BE71E78C256661A300ACBAF3 /* ViewControllerRegistro.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71E78B256661A300ACBAF3 /* ViewControllerRegistro.swift */; };
@@ -35,11 +43,10 @@
 		BE73D8ED25532813002019D2 /* ViewControllerAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73D8EC25532813002019D2 /* ViewControllerAudio.swift */; };
 		BE73D8F225532FC0002019D2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE73D8F125532FC0002019D2 /* AVFoundation.framework */; };
 		BED69028256B6507006B55CA /* Elegy2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BED69027256B6507006B55CA /* Elegy2.mp3 */; };
+		F2E67E25353B6DF010333133 /* Pods_PuntoBlanco_v_0_0_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42E4E882112E57EF7221F7B /* Pods_PuntoBlanco_v_0_0_1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		32CDA361A4C55AB82F611F9E /* Pods_PuntoBlanco_v_0_0_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PuntoBlanco_v_0_0_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		34361FF63A13B340203E0E92 /* Pods-PuntoBlanco_v_0.0.1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoBlanco_v_0.0.1.debug.xcconfig"; path = "Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1.debug.xcconfig"; sourceTree = "<group>"; };
 		4F2E54EC25549093009140CA /* ViewControllerNotificacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNotificacion.swift; sourceTree = "<group>"; };
 		4F54434F253CDAF7005F9AF6 /* PuntoBlanco_v_0.0.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuntoBlanco_v_0.0.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F544352253CDAF7005F9AF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,16 +67,27 @@
 		4FC158C8256B0B92005B6A90 /* TableViewControllerEventos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerEventos.swift; sourceTree = "<group>"; };
 		4FC158CA256B11A1005B6A90 /* TableViewControllerRetos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerRetos.swift; sourceTree = "<group>"; };
 		4FC158CC256B1202005B6A90 /* ViewControllerRetosInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRetosInfo.swift; sourceTree = "<group>"; };
-		637BED3FBE13D382878CBFEB /* Pods-PuntoBlanco_v_0.0.1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoBlanco_v_0.0.1.release.xcconfig"; path = "Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1.release.xcconfig"; sourceTree = "<group>"; };
+		750F8F6F263121CE005411C2 /* historialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historialViewController.swift; sourceTree = "<group>"; };
+		750F8F7226312C24005411C2 /* historialMeditacionesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historialMeditacionesTableViewController.swift; sourceTree = "<group>"; };
+		750F8F7526312C40005411C2 /* historialEventosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historialEventosTableViewController.swift; sourceTree = "<group>"; };
+		750F8F7826312C4F005411C2 /* historialNotasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historialNotasTableViewController.swift; sourceTree = "<group>"; };
+		750F8F7B26313075005411C2 /* hMeditacionesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hMeditacionesTableViewCell.swift; sourceTree = "<group>"; };
+		750F8F7E263130CE005411C2 /* hEventosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hEventosTableViewCell.swift; sourceTree = "<group>"; };
+		750F8F81263130D9005411C2 /* hNotasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hNotasTableViewCell.swift; sourceTree = "<group>"; };
+		7512B4F126268AD200162732 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		7539E3BE2627F35400266963 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		7E7CCDBBDA0213AE21A45C45 /* Pods-PuntoBlanco_v_0.0.1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoBlanco_v_0.0.1.debug.xcconfig"; path = "Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1.debug.xcconfig"; sourceTree = "<group>"; };
+		9D5F938C8B0F0046DE3EE56D /* Pods-PuntoBlanco_v_0.0.1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoBlanco_v_0.0.1.release.xcconfig"; path = "Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1.release.xcconfig"; sourceTree = "<group>"; };
 		BE66B5A02565A56F00A5FB61 /* ViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController5.swift; sourceTree = "<group>"; };
 		BE66B5A4256630F000A5FB61 /* ViewControllerRitmoFinal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRitmoFinal.swift; sourceTree = "<group>"; };
 		BE71E78B256661A300ACBAF3 /* ViewControllerRegistro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRegistro.swift; sourceTree = "<group>"; };
-		BE71F261260A4A210036CD37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BE71F261260A4A210036CD37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE73D8E625525538002019D2 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		BE73D8E82552F2B8002019D2 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		BE73D8EC25532813002019D2 /* ViewControllerAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAudio.swift; sourceTree = "<group>"; };
 		BE73D8F125532FC0002019D2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BED69027256B6507006B55CA /* Elegy2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Elegy2.mp3; sourceTree = "<group>"; };
+		D42E4E882112E57EF7221F7B /* Pods_PuntoBlanco_v_0_0_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PuntoBlanco_v_0_0_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE73D8F225532FC0002019D2 /* AVFoundation.framework in Frameworks */,
-				2020BBB80C3DD649B4E85CB5 /* Pods_PuntoBlanco_v_0_0_1.framework in Frameworks */,
+				F2E67E25353B6DF010333133 /* Pods_PuntoBlanco_v_0_0_1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +129,10 @@
 				4F544354253CDAF7005F9AF6 /* SceneDelegate.swift */,
 				4F544356253CDAF7005F9AF6 /* ViewController.swift */,
 				4F544358253CDAF7005F9AF6 /* Main.storyboard */,
+				750F8F81263130D9005411C2 /* hNotasTableViewCell.swift */,
+				750F8F7E263130CE005411C2 /* hEventosTableViewCell.swift */,
+				750F8F7B26313075005411C2 /* hMeditacionesTableViewCell.swift */,
+				750F8F6F263121CE005411C2 /* historialViewController.swift */,
 				4FC158CA256B11A1005B6A90 /* TableViewControllerRetos.swift */,
 				4FC158CC256B1202005B6A90 /* ViewControllerRetosInfo.swift */,
 				4FC158C8256B0B92005B6A90 /* TableViewControllerEventos.swift */,
@@ -133,6 +155,11 @@
 				4F54435D253CDAF9005F9AF6 /* LaunchScreen.storyboard */,
 				4F544360253CDAF9005F9AF6 /* Info.plist */,
 				BE71F261260A4A210036CD37 /* GoogleService-Info.plist */,
+				7512B4F126268AD200162732 /* EventTableViewCell.swift */,
+				7539E3BE2627F35400266963 /* EventCollectionViewCell.swift */,
+				750F8F7226312C24005411C2 /* historialMeditacionesTableViewController.swift */,
+				750F8F7526312C40005411C2 /* historialEventosTableViewController.swift */,
+				750F8F7826312C4F005411C2 /* historialNotasTableViewController.swift */,
 			);
 			path = PuntoBlanco_v_0.0.1;
 			sourceTree = "<group>";
@@ -140,8 +167,8 @@
 		813AC034ED08D46636FF5E77 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				34361FF63A13B340203E0E92 /* Pods-PuntoBlanco_v_0.0.1.debug.xcconfig */,
-				637BED3FBE13D382878CBFEB /* Pods-PuntoBlanco_v_0.0.1.release.xcconfig */,
+				7E7CCDBBDA0213AE21A45C45 /* Pods-PuntoBlanco_v_0.0.1.debug.xcconfig */,
+				9D5F938C8B0F0046DE3EE56D /* Pods-PuntoBlanco_v_0.0.1.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -150,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				BE73D8F125532FC0002019D2 /* AVFoundation.framework */,
-				32CDA361A4C55AB82F611F9E /* Pods_PuntoBlanco_v_0_0_1.framework */,
+				D42E4E882112E57EF7221F7B /* Pods_PuntoBlanco_v_0_0_1.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,11 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F544363253CDAF9005F9AF6 /* Build configuration list for PBXNativeTarget "PuntoBlanco_v_0.0.1" */;
 			buildPhases = (
-				3EAA37F95E84A2F79E41ACE4 /* [CP] Check Pods Manifest.lock */,
+				E67B942288F53EB79224FFF6 /* [CP] Check Pods Manifest.lock */,
 				4F54434B253CDAF7005F9AF6 /* Sources */,
 				4F54434C253CDAF7005F9AF6 /* Frameworks */,
 				4F54434D253CDAF7005F9AF6 /* Resources */,
-				62EBEED8F5FEB705FEF7DE81 /* [CP] Embed Pods Frameworks */,
+				99D7AD2B4C3D3DFFC28064D1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,7 +253,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3EAA37F95E84A2F79E41ACE4 /* [CP] Check Pods Manifest.lock */ = {
+		99D7AD2B4C3D3DFFC28064D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E67B942288F53EB79224FFF6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -248,23 +292,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		62EBEED8F5FEB705FEF7DE81 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -278,20 +305,29 @@
 				BE73D8E92552F2B8002019D2 /* ViewController3.swift in Sources */,
 				4F69D823253D1F2800C3863F /* Evento.swift in Sources */,
 				BE66B5A12565A56F00A5FB61 /* ViewController5.swift in Sources */,
+				750F8F70263121CE005411C2 /* historialViewController.swift in Sources */,
 				4FC158CD256B1202005B6A90 /* ViewControllerRetosInfo.swift in Sources */,
+				750F8F82263130D9005411C2 /* hNotasTableViewCell.swift in Sources */,
 				4F544357253CDAF7005F9AF6 /* ViewController.swift in Sources */,
 				BE73D8E725525538002019D2 /* ViewController2.swift in Sources */,
 				4F2E54ED25549093009140CA /* ViewControllerNotificacion.swift in Sources */,
 				4F544353253CDAF7005F9AF6 /* AppDelegate.swift in Sources */,
+				750F8F7626312C40005411C2 /* historialEventosTableViewController.swift in Sources */,
 				4FC158C7256B0A70005B6A90 /* ViewControllerEventosInfo.swift in Sources */,
+				750F8F7326312C24005411C2 /* historialMeditacionesTableViewController.swift in Sources */,
+				7512B4F226268AD200162732 /* EventTableViewCell.swift in Sources */,
 				BE73D8ED25532813002019D2 /* ViewControllerAudio.swift in Sources */,
 				4F69D829253D29A700C3863F /* dashboardViewController.swift in Sources */,
 				4F69D825253D1FDA00C3863F /* Reto.swift in Sources */,
+				750F8F7F263130CE005411C2 /* hEventosTableViewCell.swift in Sources */,
 				4F544368253D0BCA005F9AF6 /* Estadisticas.swift in Sources */,
+				750F8F7926312C4F005411C2 /* historialNotasTableViewController.swift in Sources */,
 				BE66B5A5256630F000A5FB61 /* ViewControllerRitmoFinal.swift in Sources */,
+				750F8F7C26313075005411C2 /* hMeditacionesTableViewCell.swift in Sources */,
 				4F69D821253D1D3800C3863F /* Usuario.swift in Sources */,
 				4FC158CB256B11A1005B6A90 /* TableViewControllerRetos.swift in Sources */,
 				4F544355253CDAF7005F9AF6 /* SceneDelegate.swift in Sources */,
+				7539E3BF2627F35400266963 /* EventCollectionViewCell.swift in Sources */,
 				BE71E78C256661A300ACBAF3 /* ViewControllerRegistro.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +472,7 @@
 		};
 		4F544364253CDAF9005F9AF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34361FF63A13B340203E0E92 /* Pods-PuntoBlanco_v_0.0.1.debug.xcconfig */;
+			baseConfigurationReference = 7E7CCDBBDA0213AE21A45C45 /* Pods-PuntoBlanco_v_0.0.1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -458,7 +494,7 @@
 		};
 		4F544365253CDAF9005F9AF6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 637BED3FBE13D382878CBFEB /* Pods-PuntoBlanco_v_0.0.1.release.xcconfig */;
+			baseConfigurationReference = 9D5F938C8B0F0046DE3EE56D /* Pods-PuntoBlanco_v_0.0.1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
