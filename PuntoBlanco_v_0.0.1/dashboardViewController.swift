@@ -40,7 +40,7 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
         self.navigationController?.navigationBar.layer.cornerRadius = 20
         self.navigationController?.navigationBar.clipsToBounds = true
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2507135272, green: 0.7050949335, blue: 0.6889640093, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.258241415, green: 0.7050990462, blue: 0.6889674664, alpha: 1)
     }
     
     
@@ -107,17 +107,15 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
             let vistaNotificacion = segue.destination as! ViewController2
             vistaNotificacion.popoverPresentationController!.delegate = self
             vistaNotificacion.userReference = userReference
-            
         } else if segue.identifier == "meditar"{
             let vis = segue.destination as! UINavigationController
             let vista = vis.topViewController as! ViewController2
             print(userReference)
             vista.userReference = userReference
         }  else if segue.identifier == "segEventos"{
-            let vis = segue.destination as! UINavigationController
-            let vista = vis.topViewController as! TableViewControllerEventos
+            let vis = segue.destination as! TableViewControllerEventos
             print(userReference)
-            vista.userReference = userReference
+            vis.userReference = userReference
         }  else if segue.identifier == "segRetos"{
             let vis = segue.destination as! UINavigationController
             let vista = vis.topViewController as! TableViewControllerRetos
@@ -127,15 +125,15 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
             let vistaNotificacion = segue.destination as! Estadisticas
             vistaNotificacion.userReference = userReference
         }
-        
          else if segue.identifier == "eventoProx"{
              let vistaDetalle = segue.destination as! ViewControllerEventosInfo
-            
              vistaDetalle.unEvento = listaEventos[index]
              vistaDetalle.userReference = userReference
          }
+         else if segue.identifier == "historial"{
+            let vistaHistorial = segue.destination as! historialViewController
 
-         
+         }
     }
     
     // MARK: - Modificar perfil

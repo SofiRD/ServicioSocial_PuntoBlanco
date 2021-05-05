@@ -11,4 +11,5 @@ class EventCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var NombreEvento: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
+    
 }

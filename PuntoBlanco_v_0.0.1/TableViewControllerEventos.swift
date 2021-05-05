@@ -10,6 +10,7 @@ import Firebase
 
 class TableViewControllerEventos: UITableViewController {
 
+
     var userReference :DatabaseReference!
     /*
     var components = DateComponents()
@@ -65,25 +66,30 @@ class TableViewControllerEventos: UITableViewController {
         super.viewDidLoad()
         print("eventos:")
         print(userReference)
+        self.navigationController?.navigationBar.layer.cornerRadius = 20
+        self.navigationController?.navigationBar.clipsToBounds = true
+        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2507135272, green: 0.7050949335, blue: 0.6889640093, alpha: 1)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return listaEventos.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as! EventTableViewCell
@@ -98,15 +104,42 @@ class TableViewControllerEventos: UITableViewController {
         cell.dateLabel?.text = listaEventos[indexPath.row].fecha
         
         
+        cell.titleLabel?.font = cell.titleLabel?.font.withSize(self.view.frame.height * 0.046)
+        
+        cell.dateLabel?.font = cell.dateLabel?.font.withSize(self.view.frame.height * 0.03)
+        
         cell.cellImageBackground?.layer.cornerRadius = cell.cellImageBackground.frame.size.width / 18
         cell.cellImageBackground?.clipsToBounds = true
+        
+        switch UIDevice.current.orientation {
+        case .portrait:
+            cell.titleLabel?.font = cell.titleLabel?.font.withSize(self.view.frame.height * 0.046)
+            cell.dateLabel?.font = cell.dateLabel?.font.withSize(self.view.frame.height * 0.03)
+        case .landscapeLeft:
+            cell.titleLabel?.font = cell.titleLabel?.font.withSize(self.view.frame.width * 0.046)
+            cell.dateLabel?.font = cell.dateLabel?.font.withSize(self.view.frame.width * 0.03)
+        case .landscapeRight:
+            cell.titleLabel?.font = cell.titleLabel?.font.withSize(self.view.frame.width * 0.046)
+            cell.dateLabel?.font = cell.dateLabel?.font.withSize(self.view.frame.width * 0.03)
+        default:
+            cell.titleLabel?.font = cell.titleLabel?.font.withSize(self.view.frame.height * 0.046)
+            cell.dateLabel?.font = cell.dateLabel?.font.withSize(self.view.frame.height * 0.03)
+        }
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        let screenSize: CGRect = UIScreen.main.bounds
+        return UIScreen.main.bounds.width/1.75
     }
+    
+//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
 
     
     // MARK: - Navigation

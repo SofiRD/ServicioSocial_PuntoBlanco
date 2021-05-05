@@ -19,7 +19,7 @@ class historialEventosTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        preferredContentSize = CGSize(width: view.frame.size.width * 0.9, height: view.frame.size.height / 2)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

@@ -9,11 +9,31 @@ import UIKit
 
 class historialNotasTableViewController: UITableViewController {
     
-    var listaMeditaciones = [Meditacion(nombreMeditacion: "Zen", tipoMeditacion: "chill", ritmoCardIni: 84, ritmoCardFin: 75, nota: "Mejorando mi ser", estadoAnimo: "feliz", fecha: "11/02/2021 19:00"), Meditacion(nombreMeditacion: "Mantra", tipoMeditacion: "Mantra", ritmoCardIni: 82, ritmoCardFin: 87, estadoAnimo: "regular", fecha: "22/04/2021 11:00")]
+    var listaMeditaciones = [Meditacion(nombreMeditacion: "Zen", tipoMeditacion: "chill", ritmoCardIni: 84, ritmoCardFin: 75, nota: """
+    Cuando me siento, cierro mis ojos y comienzo, mi mente se revela y me lanza pensamientos como ametralladora. Llegan recuerdos de la infancia, listas de pendientes, analizo situaciones del día anterior y recuerdo que hay que limpiar la estufa. Es decir, me resisto a sólo sentarme.
+
+    Poco a poco la velocidad a la que llegan los pensamientos va disminuyendo, dejando un pequeño espacio entre pensamiento y pensamiento.
+
+    Este espacio se va haciendo más y más grande, hasta que los pensamientos tardan varios segundos en llegar.
+
+    Y es ahí donde la parte derecha del cerebro sale.
+
+    Siento cómo mi conciencia es tan grande que no cabe en mi cuerpo. Siento el cuerpo, pero ya no es importante porque estoy flotando en la nada.  Me siento ligero, sin tiempo y sin espacio. Soy parte del universo y no hay “yo” porque estoy integrado al mundo.
+
+    Los problemas, las tristezas y las alegrías… todo se ve más pequeño e insignificante desde lejos porque todo es parte de lo mismo.
+
+    Escucho los ruidos externos. Primero aparecen, se van haciendo más fuertes y luego comienzan a desaparecer. Son impermanentes, justo como la vida y todo en el universo. Esa es la naturaleza de las cosas.
+
+    Por un instante vivo en la inmensidad de mi mente.
+
+    Y luego llega algún pensamiento que quiere apoderarse de mi, pero sólo lo dejo pasar como si fuera una nube. No me engancho, no lo juzgo ni lo comento.
+
+    Así pasa hasta que mi sesión termina. Abro los ojos y estoy listo para arrancar mi día.
+""", estadoAnimo: "feliz", fecha: "11/02/2021 19:00"), Meditacion(nombreMeditacion: "Mantra", tipoMeditacion: "Mantra", ritmoCardIni: 82, ritmoCardFin: 87, estadoAnimo: "regular", fecha: "22/04/2021 11:00")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        preferredContentSize = CGSize(width: view.frame.size.width * 0.9, height: view.frame.size.height / 2)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -54,7 +74,6 @@ class historialNotasTableViewController: UITableViewController {
         return 8
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celdaNotas", for: indexPath) as! hNotasTableViewCell
         
@@ -88,7 +107,19 @@ class historialNotasTableViewController: UITableViewController {
            let headerView = UIView()
            headerView.backgroundColor = UIColor.clear
            return headerView
-       }
+    }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vistaDetalle = segue.destination as! NotaViewController
+        let indice = tableView.indexPathForSelectedRow!
+        vistaDetalle.unaMeditacion = listaMeditaciones[indice.row]
+        
+        //vistaDetalle.userReference = userReference
+    }
+    
+    
     
 
     /*
