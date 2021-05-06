@@ -28,7 +28,8 @@ class ConfiguracionViewController: UIViewController {
         // Do any additional setup after loading the view.
         tfNombre?.text = unUsuario?.nombre
         tfCorreo?.text = unUsuario?.correo
-        imagenPerfil.image = unUsuario?.imagenPerfil!
+
+        imagenPerfil?.image = unUsuario?.imagenPerfil!
     }
     
 

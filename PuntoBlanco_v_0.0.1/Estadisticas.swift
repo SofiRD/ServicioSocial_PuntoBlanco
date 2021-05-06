@@ -9,12 +9,16 @@ import Charts
 import Firebase
 
 class Estadisticas: UIViewController, ChartViewDelegate {
-
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var contentView: UIView!
+    
     var barChart = BarChartView()
     var userReference :DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
         barChart.delegate = self
+        scrollView.contentSize = barChart.frame.size
+        scrollView.addSubview(barChart)
         // Do any additional setup after loading the view.
     }
     
@@ -24,10 +28,10 @@ class Estadisticas: UIViewController, ChartViewDelegate {
         print("estadisticas:")
         print(userReference)
         super.viewDidLayoutSubviews()
-        barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        barChart.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.size.width, height: self.scrollView.frame.size.height)
         
-        barChart.center = view.center
-        view.addSubview(barChart)
+        //barChart.center = view.center
+        
         
         var entries = [BarChartDataEntry]()
         
