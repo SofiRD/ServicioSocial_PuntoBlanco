@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewControllerNotificacion: UIViewController , UIPopoverPresentationControllerDelegate{
 
+    var userReference :DatabaseReference!
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
@@ -19,6 +21,8 @@ class ViewControllerNotificacion: UIViewController , UIPopoverPresentationContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("notis:")
+        print(userReference)
         preferredContentSize = CGSize(width: 150, height: 200)
         // Do any additional setup after loading the view.
     }

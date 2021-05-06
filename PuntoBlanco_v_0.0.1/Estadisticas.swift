@@ -6,22 +6,38 @@
 //
 import UIKit
 import Charts
+import Firebase
+import FirebaseCore
+import FirebaseFirestore
 
 class Estadisticas: UIViewController, ChartViewDelegate {
 
     var barChart = BarChartView()
     
+    var userReference :DatabaseReference!
+    var db :DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(self.db.child("Meditaciones"))
         barChart.delegate = self
-        // Do any additional setup after loading the view.
+        
+        
     }
     
+
+    
+    
+    
     override func viewDidLayoutSubviews() {
+        print("estadisticas:")
+        print(userReference)
         super.viewDidLayoutSubviews()
-        barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        barChart.frame = CGRect(x: 5, y: 20, width: self.view.frame.size.width-10, height: self.view.frame.size.height-60)
         
         barChart.center = view.center
+        
         view.addSubview(barChart)
         
         var entries = [BarChartDataEntry]()

@@ -12,11 +12,13 @@ class Reto: NSObject {
     var idReto : Int
     var descripcion : String
     var numeroDia : Int
+    var isRegistered : Bool
     
-    init(nombreReto: String, idReto: Int, descripcion: String, numeroDia: Int) {
+    init(nombreReto: String, idReto: Int, descripcion: String, numeroDia: Int, isRegistered: Bool) {
         self.nombreReto = nombreReto
         self.idReto = idReto
         self.descripcion = descripcion
         self.numeroDia = numeroDia
+        self.isRegistered = isRegistered
     }
 }

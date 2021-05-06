@@ -1,17 +1,23 @@
-//
+
 //  TableViewControllerRetos.swift
 //  PuntoBlanco_v_0.0.1
 //
-//  Created by Andrea Ramirez on 11/22/20.
+//  Created by Andrea Ramirez on 11/5/20.
 //
 
 import UIKit
-
+import Firebase
+   
 class TableViewControllerRetos: UITableViewController {
+
+    var userReference :DatabaseReference!
+    var listaRetos = [Reto(nombreReto: "Aprende a meditar", idReto: 3, descripcion: "Comenzamos hoy lunes 28 de agosto. Los próximos 21 días, descubrirás cómo generarte serenidad en tu cuerpo, mente y espíritu ¡Aquí vamos!", numeroDia: 21, isRegistered: false), Reto(nombreReto: "Salud Mental", idReto: 1, descripcion: "Acompáñanos a restaurarnos durante el mes de Noviembre", numeroDia: 30, isRegistered: false), Reto(nombreReto: "Semana de Parciales Sonriente", idReto: 2, descripcion: "Forma parte de nuestras meditaciones diarias", numeroDia: 7, isRegistered: false)]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("retos:")
+        print(userReference)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,23 +29,25 @@ class TableViewControllerRetos: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return listaRetos.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
 
         // Configure the cell...
-
+        cell.textLabel?.text = listaRetos[indexPath.row].nombreReto
+        cell.detailTextLabel?.text = listaRetos[indexPath.row].descripcion
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -57,7 +65,7 @@ class TableViewControllerRetos: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -75,15 +83,23 @@ class TableViewControllerRetos: UITableViewController {
         return true
     }
     */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let vistaDetalle = segue.destination as! ViewControllerRetosInfo
+        let indice = tableView.indexPathForSelectedRow!
+        vistaDetalle.unReto = listaRetos[indice.row]
+        vistaDetalle.userReference = userReference
+        
     }
-    */
-
 }
+
