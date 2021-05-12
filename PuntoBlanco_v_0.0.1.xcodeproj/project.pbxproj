@@ -38,7 +38,6 @@
 		BE66B5A12565A56F00A5FB61 /* ViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B5A02565A56F00A5FB61 /* ViewController5.swift */; };
 		BE66B5A5256630F000A5FB61 /* ViewControllerRitmoFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B5A4256630F000A5FB61 /* ViewControllerRitmoFinal.swift */; };
 		BE71E78C256661A300ACBAF3 /* ViewControllerRegistro.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71E78B256661A300ACBAF3 /* ViewControllerRegistro.swift */; };
-		BE71F262260A4A210036CD37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE71F261260A4A210036CD37 /* GoogleService-Info.plist */; };
 		BE73D8E725525538002019D2 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73D8E625525538002019D2 /* ViewController2.swift */; };
 		BE73D8E92552F2B8002019D2 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73D8E82552F2B8002019D2 /* ViewController3.swift */; };
 		BE73D8ED25532813002019D2 /* ViewControllerAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73D8EC25532813002019D2 /* ViewControllerAudio.swift */; };
@@ -156,6 +155,8 @@
 				4F54435B253CDAF9005F9AF6 /* Assets.xcassets */,
 				4F54435D253CDAF9005F9AF6 /* LaunchScreen.storyboard */,
 				4F544360253CDAF9005F9AF6 /* Info.plist */,
+				FBD2FF84264B321700FB2952 /* GoogleService-Info.plist */,
+=======
 				BE71F261260A4A210036CD37 /* GoogleService-Info.plist */,
 				7512B4F126268AD200162732 /* EventTableViewCell.swift */,
 				7539E3BE2627F35400266963 /* EventCollectionViewCell.swift */,
@@ -249,7 +250,7 @@
 				4F54435F253CDAF9005F9AF6 /* LaunchScreen.storyboard in Resources */,
 				4F54435C253CDAF9005F9AF6 /* Assets.xcassets in Resources */,
 				4F54435A253CDAF7005F9AF6 /* Main.storyboard in Resources */,
-				BE71F262260A4A210036CD37 /* GoogleService-Info.plist in Resources */,
+				FBD2FF85264B321700FB2952 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +483,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ACQZVHW9S2;
 				INFOPLIST_FILE = PuntoBlanco_v_0.0.1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -504,6 +506,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ACQZVHW9S2;
 				INFOPLIST_FILE = PuntoBlanco_v_0.0.1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
