@@ -41,6 +41,20 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
         self.navigationController?.navigationBar.clipsToBounds = true
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.258241415, green: 0.7050990462, blue: 0.6889674664, alpha: 1)
+        
+        self.navigationController?.navigationBar.tintColor = .white
+        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     

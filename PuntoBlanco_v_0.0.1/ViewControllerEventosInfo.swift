@@ -37,7 +37,7 @@ class ViewControllerEventosInfo: UIViewController {
             lbNombreEvento.font = lbNombreEvento.font.withSize(self.view.frame.height * 0.03)
         }
 
-        
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         print(userReference)
         // Do any additional setup after loading the view.
         title = "Detalle de evento"
@@ -56,8 +56,8 @@ class ViewControllerEventosInfo: UIViewController {
             btRegistrar.backgroundColor      = UIColor.red
         }
         
-        //eventPlaceholder.layer.cornerRadius = eventPlaceholder.frame.size.width / 18
-        //eventPlaceholder.clipsToBounds = true
+        eventPlaceholder.layer.cornerRadius = eventPlaceholder.frame.size.width / 15
+        eventPlaceholder.clipsToBounds = true
         
         imagenEvento.layer.cornerRadius = imagenEvento.frame.size.width / 15
         imagenEvento.alpha = 0.5

@@ -31,8 +31,9 @@ class historialViewController: UIViewController, UIPopoverPresentationController
         self.navigationController?.navigationBar.clipsToBounds = true
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.258241415, green: 0.7050990462, blue: 0.6889674664, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = .white
         // Do any additional setup after loading the view.
-        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         
     }
     

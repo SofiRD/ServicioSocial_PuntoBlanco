@@ -1,0 +1,6 @@
+framework module Pods_PuntoBlanco_v_0_0_1 {
+  umbrella header "Pods-PuntoBlanco_v_0.0.1-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -85,4 +85,13 @@ class historialEventosTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        let vistaDetalle = segue.destination as! EventoViewController
+        let indice = self.tableView.indexPathForSelectedRow?.section
+        vistaDetalle.unEvento = listaEventos[indice!]
+        //vistaDetalle.userReference = userReference
+    }
 }

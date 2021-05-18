@@ -70,6 +70,7 @@ class TableViewControllerEventos: UITableViewController {
         self.navigationController?.navigationBar.clipsToBounds = true
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2507135272, green: 0.7050949335, blue: 0.6889640093, alpha: 1)
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

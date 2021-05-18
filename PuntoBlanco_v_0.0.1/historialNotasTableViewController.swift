@@ -113,8 +113,8 @@ class historialNotasTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vistaDetalle = segue.destination as! NotaViewController
-        let indice = tableView.indexPathForSelectedRow!
-        vistaDetalle.unaMeditacion = listaMeditaciones[indice.row]
+        let indice = self.tableView.indexPathForSelectedRow?.section
+        vistaDetalle.unaMeditacion = listaMeditaciones[indice!]
         
         //vistaDetalle.userReference = userReference
     }
