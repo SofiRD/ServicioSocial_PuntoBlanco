@@ -131,8 +131,7 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
             print(userReference)
             vis.userReference = userReference
         }  else if segue.identifier == "segRetos"{
-            let vis = segue.destination as! UINavigationController
-            let vista = vis.topViewController as! TableViewControllerRetos
+            let vista = segue.destination as! TableViewControllerRetos
             print(userReference)
             vista.userReference = userReference
         } else if segue.identifier == "estadisticas"{
