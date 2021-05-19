@@ -145,7 +145,6 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
          }
          else if segue.identifier == "historial"{
             let vistaHistorial = segue.destination as! historialViewController
-
          }
     }
     
