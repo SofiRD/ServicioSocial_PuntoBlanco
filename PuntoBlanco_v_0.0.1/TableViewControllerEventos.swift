@@ -9,7 +9,8 @@ import UIKit
 import Firebase
 
 class TableViewControllerEventos: UITableViewController {
-    
+
+
     var userReference :DatabaseReference!
     /*
     var components = DateComponents()
@@ -56,84 +57,90 @@ class TableViewControllerEventos: UITableViewController {
     */
     
 
-    var listaEventos = [Evento(nombreEvento: "Música para el alma: Chello", idEvento: 1, fecha: "1/12/2020 19:00", descripcion: "Disfruta de una experiencia sensible y relajante. Conecta con tu interior a través de la música emotiva del chello.",isRegistered: false),
-                        Evento(nombreEvento: "Música para el alma: Arpa", idEvento: 2, fecha: "11/02/2021 19:00", descripcion: "Enamórate de la magia del arpa y regálate un momento de relajación.",isRegistered: false),
-                        Evento(nombreEvento: "Día de la Felicidad: Danza Africana", idEvento: 3, fecha: "25/03/2021 11:00", descripcion: "Con esto en mente, la danza africana es una meditación en movimiento que mueve el alma a través de la activación del cuerpo y la consciencia de cada movimiento, de las vibraciones sentidas por el ritmo del tambor y los pasos de quienes nos acompañan en esta celebración del corazón.",isRegistered: false),
-                        Evento(nombreEvento: "Día de la Tierra: Cartas a la Tierra", idEvento: 4, fecha: "22/04/2021 11:00", descripcion: "Meditación guiada y reflexión a través de los poemas del maestro zen vietnamita Thich Nath Hanh",isRegistered: false)]
+    var listaEventos = [Evento(nombreEvento: "Música para el alma: Chello", idEvento: 1, imagen: (UIImage(named: "meditacion_1") ?? UIImage(named: "meditacion_1"))!, fecha: "1/12/2020 19:00", descripcion: "Disfruta de una experiencia sensible y relajante. Conecta con tu interior a través de la música emotiva del chello.",isRegistered: false),
+                        Evento(nombreEvento: "Música para el alma: Arpa", idEvento: 2,imagen: (UIImage(named: "meditacion_2") ?? UIImage(named: "meditacion_1"))!, fecha: "11/02/2021 19:00", descripcion: "Enamórate de la magia del arpa y regálate un momento de relajación.",isRegistered: false),
+                        Evento(nombreEvento: "Día de la Felicidad: Danza Africana", idEvento: 3,imagen: (UIImage(named: "meditacion_3") ?? UIImage(named: "meditacion_1"))!, fecha: "25/03/2021 11:00", descripcion: "Con esto en mente, la danza africana es una meditación en movimiento que mueve el alma a través de la activación del cuerpo y la consciencia de cada movimiento, de     las vibraciones sentidas por el ritmo del tambor y los pasos de quienes nos acompañan en esta celebración del corazón.",isRegistered: false),
+                        Evento(nombreEvento: "Día de la Tierra: Cartas a la Tierra", idEvento: 4,imagen: (UIImage(named: "meditacion_4") ?? UIImage(named: "meditacion_1"))!, fecha: "22/04/2021 11:00", descripcion: "Meditación guiada y reflexión a través de los poemas del maestro zen vietnamita Thich Nath Hanh" ,isRegistered: false)]	
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("eventos:")
         print(userReference)
+        self.navigationController?.navigationBar.layer.cornerRadius = 20
+        self.navigationController?.navigationBar.clipsToBounds = true
+        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.2507135272, green: 0.7050949335, blue: 0.6889640093, alpha: 1)
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return listaEventos.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as! EventTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
 
         // Configure the cell...
-        cell.textLabel?.text = listaEventos[indexPath.row].nombreEvento
-        cell.detailTextLabel?.text = listaEventos[indexPath.row].descripcion
+        
+        
+        cell.cellImageBackground?.image = listaEventos[indexPath.row].imagen
+        cell.cellImageBackground.alpha = 0.5
+        cell.titleLabel?.text = listaEventos[indexPath.row].nombreEvento
+        cell.dateLabel?.text = listaEventos[indexPath.row].fecha
+        
+        
+        cell.titleLabel?.font = cell.titleLabel?.font.withSize(self.view.frame.height * 0.046)
+        
+        cell.dateLabel?.font = cell.dateLabel?.font.withSize(self.view.frame.height * 0.03)
+        
+        cell.cellImageBackground?.layer.cornerRadius = cell.cellImageBackground.frame.size.width / 18
+        cell.cellImageBackground?.clipsToBounds = true
+        
+        switch UIDevice.current.orientation {
+        case .portrait:
+            cell.titleLabel?.font = cell.titleLabel?.font.withSize(self.view.frame.height * 0.046)
+            cell.dateLabel?.font = cell.dateLabel?.font.withSize(self.view.frame.height * 0.03)
+        case .landscapeLeft:
+            cell.titleLabel?.font = cell.titleLabel?.font.withSize(self.view.frame.width * 0.046)
+            cell.dateLabel?.font = cell.dateLabel?.font.withSize(self.view.frame.width * 0.03)
+        case .landscapeRight:
+            cell.titleLabel?.font = cell.titleLabel?.font.withSize(self.view.frame.width * 0.046)
+            cell.dateLabel?.font = cell.dateLabel?.font.withSize(self.view.frame.width * 0.03)
+        default:
+            cell.titleLabel?.font = cell.titleLabel?.font.withSize(self.view.frame.height * 0.046)
+            cell.dateLabel?.font = cell.dateLabel?.font.withSize(self.view.frame.height * 0.03)
+        }
 
         return cell
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        let screenSize: CGRect = UIScreen.main.bounds
+        return UIScreen.main.bounds.width/1.75
     }
+    
+//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
 
     
     // MARK: - Navigation
