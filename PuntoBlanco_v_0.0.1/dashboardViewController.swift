@@ -153,7 +153,6 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
         user = us
         viewDidLoad()
     }
-
 }
 
 
