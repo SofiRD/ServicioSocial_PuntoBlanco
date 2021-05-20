@@ -11,6 +11,7 @@ import Firebase
 class Estadisticas: UIViewController, ChartViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var tempnavBar: UINavigationBar!
     
     //var barChart = BarChartView()
     var barChart = LineChartView()
@@ -53,8 +54,6 @@ class Estadisticas: UIViewController, ChartViewDelegate {
         
         
     }
-    
-    
 
     /*
     // MARK: - Navigation
