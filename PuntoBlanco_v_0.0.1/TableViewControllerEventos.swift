@@ -57,15 +57,43 @@ class TableViewControllerEventos: UITableViewController {
     */
     
 
-    var listaEventos = [Evento(nombreEvento: "Música para el alma: Chello", idEvento: 1, imagen: (UIImage(named: "meditacion_1") ?? UIImage(named: "meditacion_1"))!, fecha: "1/12/2020 19:00", descripcion: "Disfruta de una experiencia sensible y relajante. Conecta con tu interior a través de la música emotiva del chello.",isRegistered: false),
-                        Evento(nombreEvento: "Música para el alma: Arpa", idEvento: 2,imagen: (UIImage(named: "meditacion_2") ?? UIImage(named: "meditacion_1"))!, fecha: "11/02/2021 19:00", descripcion: "Enamórate de la magia del arpa y regálate un momento de relajación.",isRegistered: false),
-                        Evento(nombreEvento: "Día de la Felicidad: Danza Africana", idEvento: 3,imagen: (UIImage(named: "meditacion_3") ?? UIImage(named: "meditacion_1"))!, fecha: "25/03/2021 11:00", descripcion: "Con esto en mente, la danza africana es una meditación en movimiento que mueve el alma a través de la activación del cuerpo y la consciencia de cada movimiento, de     las vibraciones sentidas por el ritmo del tambor y los pasos de quienes nos acompañan en esta celebración del corazón.",isRegistered: false),
-                        Evento(nombreEvento: "Día de la Tierra: Cartas a la Tierra", idEvento: 4,imagen: (UIImage(named: "meditacion_4") ?? UIImage(named: "meditacion_1"))!, fecha: "22/04/2021 11:00", descripcion: "Meditación guiada y reflexión a través de los poemas del maestro zen vietnamita Thich Nath Hanh" ,isRegistered: false)]	
+    var listaEventos : [Evento] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("eventos:")
         print(userReference)
+        let db = Firestore.firestore()
+        db.collection("Eventos").getDocuments(){
+            (QuerySnapshot,err) in
+            if let err = err{
+                print("error obteniendo documentos")
+            }else{
+                var count = 0
+                for document in QuerySnapshot!.documents{
+                    let date = NSDate()
+                    let unixtime = date.timeIntervalSince1970
+                    
+                    
+                    let nombre = document.data()["nombre"]! as! String
+                    let desc = document.data()["descripcion"]! as! String
+                    let fecha = document.data()["fecha"]! as! Timestamp
+                    let lugar = document.data()["place"]! as? String
+                    let img = document.data()["img"]! as! String
+                    let aDate = fecha.dateValue()
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "MMM d, h:mm a"
+                    let formattedTimeZoneStr = formatter.string(from: aDate)
+                    
+                    print("img",img)
+                    print("lugar",lugar)
+                    //print(formattedTimeZoneStr)
+                    let newEvento = Evento(nombreEvento: nombre, idEvento: count,imagen: (UIImage(named: "meditacion_4") ?? UIImage(named: "meditacion_1"))!, fecha: formattedTimeZoneStr, descripcion: desc, lugar:lugar ?? "No Especificado" ,isRegistered: false)
+                    self.listaEventos.append(newEvento)
+                }
+            }
+            self.tableView.reloadData()
+        }
         self.navigationController?.navigationBar.layer.cornerRadius = 20
         self.navigationController?.navigationBar.clipsToBounds = true
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]

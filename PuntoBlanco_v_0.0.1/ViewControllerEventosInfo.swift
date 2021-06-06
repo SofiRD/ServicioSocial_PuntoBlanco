@@ -21,7 +21,9 @@ class ViewControllerEventosInfo: UIViewController {
     @IBOutlet weak var imagenEvento: UIImageView!
     @IBOutlet weak var btRegistrar: UIButton!
     //@IBOutlet weak var lbRegistro: UILabel!
-
+    @IBOutlet weak var lblLugar: UITextField!
+    @IBOutlet weak var lbTutor: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +48,7 @@ class ViewControllerEventosInfo: UIViewController {
         lbFechaEvento.text = unEvento.fecha
         lbDescripcionEvento.text = unEvento.descripcion
         imagenEvento.image = unEvento.imagen
-        
+        lblLugar.text = unEvento.lugar
         if(!unEvento.isRegistered){
             //lbRegistro.alpha = 0
             btRegistrar.setTitle("Registrarme", for: .normal)

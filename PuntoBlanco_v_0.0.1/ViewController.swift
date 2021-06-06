@@ -13,8 +13,6 @@ import FirebaseFirestore
 
 class ViewController: UIViewController {
 
-    
-    
     @IBOutlet weak var tfCorr: UITextField!
     @IBOutlet weak var tfContra: UITextField!
     var userReference :DatabaseReference!
