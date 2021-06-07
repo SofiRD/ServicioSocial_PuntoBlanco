@@ -14,6 +14,10 @@ class MeditacionViewController: UIViewController {
     @IBOutlet weak var tipoMeditacion: UILabel!
     @IBOutlet weak var ritmoCardiacoInicial: UILabel!
     @IBOutlet weak var ritmoCardiacoFinal: UILabel!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet var mainView: UIView!
+    
+    var color = UIColor(red: 244/255, green: 91/255, blue: 105/255, alpha: 0.7)
     
     var orientations = UIInterfaceOrientationMask.portrait //or what orientation you want
         override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
@@ -23,12 +27,14 @@ class MeditacionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(unaMeditacion.nombreMeditacion)
-        
+        //print(unaMeditacion.nombreMeditacion)
+        containerView.backgroundColor = color
+        mainView.backgroundColor = UIColor(white: 1, alpha: 0.5)
         nombreMeditacion.text = unaMeditacion.nombreMeditacion
         tipoMeditacion.text = unaMeditacion.tipoMeditacion
         ritmoCardiacoInicial.text = String( unaMeditacion.ritmoCardIni) + " PPM"
         ritmoCardiacoFinal.text = String(unaMeditacion.ritmoCardFin) + " PPM"
+        
         
         // Do any additional setup after loading the view.
     }

@@ -13,6 +13,10 @@ import FirebaseFirestore
 
 class ViewController: UIViewController {
 
+    //conexiones para darle aspecto redondo a pantalla
+    
+    
+    
     @IBOutlet weak var tfCorr: UITextField!
     @IBOutlet weak var tfContra: UITextField!
     var userReference :DatabaseReference!

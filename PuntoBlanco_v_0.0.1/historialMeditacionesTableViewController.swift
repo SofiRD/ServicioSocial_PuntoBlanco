@@ -25,7 +25,12 @@ class historialMeditacionesTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillDisappear(animated)
-    } 
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        preferredContentSize = CGSize(width: view.frame.size.width * 0.9, height: view.frame.size.height / 2)
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -82,6 +87,14 @@ class historialMeditacionesTableViewController: UITableViewController {
         let vistaDetalle = segue.destination as! MeditacionViewController
         let indice = self.tableView.indexPathForSelectedRow?.section
         vistaDetalle.unaMeditacion = listaMeditaciones[indice!]
+        if indice! % 3 == 0 {
+            vistaDetalle.color = UIColor(red: 51/255, green: 65/255, blue: 149/255, alpha: 0.7)
+        }else if indice! % 2 == 0{
+            vistaDetalle.color  = UIColor(red: 40/255, green: 150/255, blue: 90/255, alpha: 0.7)
+        }else{
+            vistaDetalle.color  = UIColor(red: 244/255, green: 91/255, blue: 105/255, alpha: 0.7)
+        }
+        
         //vistaDetalle.userReference = userReference
     }
 

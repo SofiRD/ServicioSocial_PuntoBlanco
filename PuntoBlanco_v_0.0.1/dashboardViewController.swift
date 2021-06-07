@@ -14,6 +14,13 @@ import Firebase
 
 class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPopoverPresentationControllerDelegate, UICollectionViewDataSource,UICollectionViewDelegate{
     
+    //conexciones con storyboard para dar aspecto redondo a pantalla
+    @IBOutlet weak var btMeditacion: UIButton!
+    @IBOutlet weak var btHistorial: UIButton!
+    @IBOutlet weak var btEstadisticas: UIButton!
+    
+    @IBOutlet weak var btRetos: UIButton!
+    
     var userReference : DatabaseReference!
     var user : Usuario = Usuario(idUsuario: 1, nombre: "Sebastian Diaz", correo: "sebastian@gmail.com", contrasena: "sebastian1234", imagenPerfil: UIImage(named: "foto"))
     @IBOutlet weak var logOut: UIButton!
@@ -23,16 +30,28 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
     @IBOutlet weak var collectionView: UICollectionView!
     
     var index:Int = 0
-//    var listaEventos = [Evento(nombreEvento: "Música para el alma: Chello", idEvento: 1, imagen: (UIImage(named: "meditacion_1") ?? UIImage(named: "meditacion_1"))!, fecha: "1/12/2020 19:00", descripcion: "Disfruta de una experiencia sensible y relajante. Conecta con tu interior a través de la música emotiva del chello.",isRegistered: false),
-//                        Evento(nombreEvento: "Música para el alma: Arpa", idEvento: 2,imagen: (UIImage(named: "meditacion_2") ?? UIImage(named: "meditacion_1"))!, fecha: "11/02/2021 19:00", descripcion: "Enamórate de la magia del arpa y regálate un momento de relajación.",isRegistered: false),
-//                        Evento(nombreEvento: "Día de la Felicidad: Danza Africana", idEvento: 3,imagen: (UIImage(named: "meditacion_3") ?? UIImage(named: "meditacion_1"))!, fecha: "25/03/2021 11:00", descripcion: "Con esto en mente, la danza africana es una meditación en movimiento que mueve el alma a través de la activación del cuerpo y la consciencia de cada movimiento, de     las vibraciones sentidas por el ritmo del tambor y los pasos de quienes nos acompañan en esta celebración del corazón.",isRegistered: false),
-//                        Evento(nombreEvento: "Día de la Tierra: Cartas a la Tierra", idEvento: 4,imagen: (UIImage(named: "meditacion_4") ?? UIImage(named: "meditacion_1"))!, fecha: "22/04/2021 11:00", descripcion: "Meditación guiada y reflexión a través de los poemas del maestro zen vietnamita Thich Nath Hanh" ,isRegistered: false)]
     var listaEventos : [Evento] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        btMeditacion.layer.borderWidth = 1
+        btMeditacion.layer.cornerRadius = 10
         
+        btHistorial.layer.borderWidth = 1
+        btHistorial.layer.cornerRadius = 10
+        
+        btEstadisticas.layer.borderWidth = 1
+        btEstadisticas.layer.cornerRadius = 10
+        
+        btRetos.layer.borderWidth = 1
+        btRetos.layer.cornerRadius = 10
+        
+        imagenPerfilUsuario.layer.cornerRadius = 15
+        imagenPerfilUsuario.clipsToBounds = true
+        
+        lbNombreUsuario.layer.cornerRadius = 5
+        lbNombreUsuario.clipsToBounds = true
         let db = Firestore.firestore()
         db.collection("Eventos").getDocuments(){
             (QuerySnapshot,err) in
@@ -49,15 +68,26 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
                     let desc = document.data()["descripcion"]! as! String
                     let fecha = document.data()["fecha"]! as! Timestamp
                     var lugar = document.data()["place"]! as? String
-                    let img = document.data()["img"]! as! String
+                    let imgUrl = document.data()["imgFile"] as? String
                     let aDate = fecha.dateValue()
                     let formatter = DateFormatter()
                     formatter.dateFormat = "MMM d, h:mm a"
                     let formattedTimeZoneStr = formatter.string(from: aDate)
                     
-                    print("img",img)
+                    
+                    var urlToUiImage = (UIImage(named: "meditacion_4"))
+                    
+                    if let imgVerification = imgUrl{
+                        print("img",imgUrl)
+                        let url = URL(string: imgUrl!)
+                        if let data = try? Data(contentsOf: url!){
+                            let newImage: UIImage = UIImage(data: data)!
+                            urlToUiImage = newImage
+                        }
+                    }
+                    
                     //print(formattedTimeZoneStr)
-                    let newEvento = Evento(nombreEvento: nombre, idEvento: count,imagen: (UIImage(named: "meditacion_4") ?? UIImage(named: "meditacion_1"))!, fecha: formattedTimeZoneStr, descripcion: desc, lugar: lugar ?? "No Especificado" ,isRegistered: false)
+                    let newEvento = Evento(nombreEvento: nombre, idEvento: count,imagen: urlToUiImage!, fecha: formattedTimeZoneStr, descripcion: desc, lugar: lugar ?? "No Especificado" ,isRegistered: false)
                     self.listaEventos.append(newEvento)
                 }
             }
@@ -165,6 +195,7 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
             let vis = segue.destination as! TableViewControllerEventos
             print(userReference)
             vis.userReference = userReference
+            vis.listaEventos = listaEventos
         }  else if segue.identifier == "segRetos"{
             let vista = segue.destination as! TableViewControllerRetos
             print(userReference)
