@@ -31,7 +31,7 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
     
     var index:Int = 0
     var listaEventos : [Evento] = []
-    
+    var listaNotificaciones : [Notificacion] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +53,33 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
         lbNombreUsuario.layer.cornerRadius = 5
         lbNombreUsuario.clipsToBounds = true
         let db = Firestore.firestore()
+        db.collection("Notificaciones").getDocuments(){
+            (QuerySnapshot,err) in
+            if let err = err{
+                print("error obteniendo documentos")
+            }else{
+                for document in QuerySnapshot!.documents{
+                    let title = document.data()["title"] as! String
+                    let fecha = document.data()["fecha"] as! Timestamp
+                    let desc = document.data()["descripcion"] as! String
+                    let TTL = document.data()["lifetime"] as! Int
+                    
+                    var deleteDate = fecha.dateValue()
+                    deleteDate += (86400 * Double(TTL))
+                    
+                    var aDate = fecha.dateValue()
+                    if (deleteDate > aDate){
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "MMM d, h:mm a"
+                        
+                        let formattedTimeZoneStr = formatter.string(from: aDate)
+                        let newDate = Notificacion(fecha: formattedTimeZoneStr, title: title, desc: desc)
+                        
+                        self.listaNotificaciones.append(newDate)
+                    }
+                }
+            }
+        }
         db.collection("Eventos").getDocuments(){
             (QuerySnapshot,err) in
             if let err = err{
@@ -69,30 +96,36 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
                     let fecha = document.data()["fecha"]! as! Timestamp
                     var lugar = document.data()["place"]! as? String
                     let imgUrl = document.data()["imgFile"] as? String
+                    let fechaDelete = document.data()["fecha_delete"] as! Timestamp
+                    let deleteDate = fechaDelete.dateValue()
                     let aDate = fecha.dateValue()
                     let formatter = DateFormatter()
                     formatter.dateFormat = "MMM d, h:mm a"
                     let formattedTimeZoneStr = formatter.string(from: aDate)
                     
+                    let dateNow = Date()
                     
-                    var urlToUiImage = (UIImage(named: "meditacion_4"))
-                    
-                    if let imgVerification = imgUrl{
-                        print("img",imgUrl)
-                        let url = URL(string: imgUrl!)
-                        if let data = try? Data(contentsOf: url!){
-                            let newImage: UIImage = UIImage(data: data)!
-                            urlToUiImage = newImage
-                        }
+                    if dateNow <= deleteDate{
+                        var urlToUiImage = (UIImage(named: "meditacion_4"))
+                        
+                        if let imgVerification = imgUrl{
+                            print("img",imgUrl)
+                            let url = URL(string: imgUrl!)
+                            if let data = try? Data(contentsOf: url!){
+                                let newImage: UIImage = UIImage(data: data)!
+                                urlToUiImage = newImage
+                            }
                     }
-                    
-                    //print(formattedTimeZoneStr)
-                    let newEvento = Evento(nombreEvento: nombre, idEvento: count,imagen: urlToUiImage!, fecha: formattedTimeZoneStr, descripcion: desc, lugar: lugar ?? "No Especificado" ,isRegistered: false)
-                    self.listaEventos.append(newEvento)
+                        
+                        //print(formattedTimeZoneStr)
+                        let newEvento = Evento(nombreEvento: nombre, idEvento: count,imagen: urlToUiImage!, fecha: formattedTimeZoneStr, descripcion: desc, lugar: lugar ?? "No Especificado" ,isRegistered: false)
+                        self.listaEventos.append(newEvento)
+                    }
                 }
             }
             self.collectionView.reloadData()
         }
+        
         
         self.navigationItem.setHidesBackButton(true, animated: false)
         // Do any additional setup after loading the view.
@@ -110,10 +143,15 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
         
         
     }
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -132,6 +170,10 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if listaEventos.count > 5{
+            return 5
+        }
         return listaEventos.count
         
     }
@@ -183,8 +225,10 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
             vistaConf.userReference = userReference
         }
         else if segue.identifier == "notificacion"{
-            let vistaNotificacion = segue.destination as! ViewController2
+            let vistaNotificacion = segue.destination as! ViewControllerNotificacion
             vistaNotificacion.popoverPresentationController!.delegate = self
+            vistaNotificacion.listaNotificaciones = listaNotificaciones
+            
             vistaNotificacion.userReference = userReference
         } else if segue.identifier == "meditar"{
             let vis = segue.destination as! UINavigationController

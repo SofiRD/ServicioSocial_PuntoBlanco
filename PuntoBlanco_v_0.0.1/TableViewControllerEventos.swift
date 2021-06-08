@@ -63,37 +63,6 @@ class TableViewControllerEventos: UITableViewController {
         super.viewDidLoad()
         print("eventos: " , lista)
         print(userReference)
-//        let db = Firestore.firestore()
-//        db.collection("Eventos").getDocuments(){
-//            (QuerySnapshot,err) in
-//            if let err = err{
-//                print("error obteniendo documentos")
-//            }else{
-//                var count = 0
-//                for document in QuerySnapshot!.documents{
-//                    let date = NSDate()
-//                    let unixtime = date.timeIntervalSince1970
-//
-//
-//                    let nombre = document.data()["nombre"]! as! String
-//                    let desc = document.data()["descripcion"]! as! String
-//                    let fecha = document.data()["fecha"]! as! Timestamp
-//                    let lugar = document.data()["place"]! as? String
-//                    let img = document.data()["img"]! as! String
-//                    let aDate = fecha.dateValue()
-//                    let formatter = DateFormatter()
-//                    formatter.dateFormat = "MMM d, h:mm a"
-//                    let formattedTimeZoneStr = formatter.string(from: aDate)
-//
-//                    print("img",img)
-//                    print("lugar",lugar)
-//                    //print(formattedTimeZoneStr)
-//                    let newEvento = Evento(nombreEvento: nombre, idEvento: count,imagen: (UIImage(named: "meditacion_4") ?? UIImage(named: "meditacion_1"))!, fecha: formattedTimeZoneStr, descripcion: desc, lugar:lugar ?? "No Especificado" ,isRegistered: false)
-//                    self.listaEventos.append(newEvento)
-//                }
-//            }
-//            self.tableView.reloadData()
-//        }
         self.navigationController?.navigationBar.layer.cornerRadius = 20
         self.navigationController?.navigationBar.clipsToBounds = true
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]

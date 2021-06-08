@@ -38,6 +38,8 @@
 		7539E3BF2627F35400266963 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539E3BE2627F35400266963 /* EventCollectionViewCell.swift */; };
 		755F4BC2264C87FC007EAFCA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 755F4BC1264C87FC007EAFCA /* GoogleService-Info.plist */; };
 		755F4BC6264C930E007EAFCA /* EventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F4BC5264C930E007EAFCA /* EventoViewController.swift */; };
+		75B7EA0A266EF35200BC8345 /* NotificacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7EA09266EF35200BC8345 /* NotificacionTableViewCell.swift */; };
+		75B7EA11266EFAA100BC8345 /* Notificacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7EA10266EFAA100BC8345 /* Notificacion.swift */; };
 		BE66B5A12565A56F00A5FB61 /* ViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B5A02565A56F00A5FB61 /* ViewController5.swift */; };
 		BE66B5A5256630F000A5FB61 /* ViewControllerRitmoFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B5A4256630F000A5FB61 /* ViewControllerRitmoFinal.swift */; };
 		BE71E78C256661A300ACBAF3 /* ViewControllerRegistro.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71E78B256661A300ACBAF3 /* ViewControllerRegistro.swift */; };
@@ -83,6 +85,8 @@
 		7539E3BE2627F35400266963 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		755F4BC1264C87FC007EAFCA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		755F4BC5264C930E007EAFCA /* EventoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoViewController.swift; sourceTree = "<group>"; };
+		75B7EA09266EF35200BC8345 /* NotificacionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificacionTableViewCell.swift; sourceTree = "<group>"; };
+		75B7EA10266EFAA100BC8345 /* Notificacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificacion.swift; sourceTree = "<group>"; };
 		7E7CCDBBDA0213AE21A45C45 /* Pods-PuntoBlanco_v_0.0.1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoBlanco_v_0.0.1.debug.xcconfig"; path = "Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1.debug.xcconfig"; sourceTree = "<group>"; };
 		9D5F938C8B0F0046DE3EE56D /* Pods-PuntoBlanco_v_0.0.1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoBlanco_v_0.0.1.release.xcconfig"; path = "Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1.release.xcconfig"; sourceTree = "<group>"; };
 		BE66B5A02565A56F00A5FB61 /* ViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController5.swift; sourceTree = "<group>"; };
@@ -155,11 +159,12 @@
 				4F69D824253D1FDA00C3863F /* Reto.swift */,
 				4F69D826253D205C00C3863F /* Meditacion.swift */,
 				4F69D820253D1D3800C3863F /* Usuario.swift */,
+				75B7EA10266EFAA100BC8345 /* Notificacion.swift */,
 				4F544367253D0BCA005F9AF6 /* Estadisticas.swift */,
+				4F544360253CDAF9005F9AF6 /* Info.plist */,
 				BE71E78B256661A300ACBAF3 /* ViewControllerRegistro.swift */,
 				4F54435B253CDAF9005F9AF6 /* Assets.xcassets */,
 				4F54435D253CDAF9005F9AF6 /* LaunchScreen.storyboard */,
-				4F544360253CDAF9005F9AF6 /* Info.plist */,
 				755F4BC1264C87FC007EAFCA /* GoogleService-Info.plist */,
 				7512B4F126268AD200162732 /* EventTableViewCell.swift */,
 				7539E3BE2627F35400266963 /* EventCollectionViewCell.swift */,
@@ -169,6 +174,7 @@
 				750791E126420EDB008DF5F0 /* NotaViewController.swift */,
 				755F4BC5264C930E007EAFCA /* EventoViewController.swift */,
 				750C224B264CB0AE0049D612 /* MeditacionViewController.swift */,
+				75B7EA09266EF35200BC8345 /* NotificacionTableViewCell.swift */,
 			);
 			path = PuntoBlanco_v_0.0.1;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				750F8F70263121CE005411C2 /* historialViewController.swift in Sources */,
 				4FC158CD256B1202005B6A90 /* ViewControllerRetosInfo.swift in Sources */,
 				750F8F82263130D9005411C2 /* hNotasTableViewCell.swift in Sources */,
+				75B7EA11266EFAA100BC8345 /* Notificacion.swift in Sources */,
 				4F544357253CDAF7005F9AF6 /* ViewController.swift in Sources */,
 				BE73D8E725525538002019D2 /* ViewController2.swift in Sources */,
 				4F2E54ED25549093009140CA /* ViewControllerNotificacion.swift in Sources */,
@@ -333,6 +340,7 @@
 				750F8F7F263130CE005411C2 /* hEventosTableViewCell.swift in Sources */,
 				750C224C264CB0AE0049D612 /* MeditacionViewController.swift in Sources */,
 				4F544368253D0BCA005F9AF6 /* Estadisticas.swift in Sources */,
+				75B7EA0A266EF35200BC8345 /* NotificacionTableViewCell.swift in Sources */,
 				750F8F7926312C4F005411C2 /* historialNotasTableViewController.swift in Sources */,
 				BE66B5A5256630F000A5FB61 /* ViewControllerRitmoFinal.swift in Sources */,
 				750F8F7C26313075005411C2 /* hMeditacionesTableViewCell.swift in Sources */,

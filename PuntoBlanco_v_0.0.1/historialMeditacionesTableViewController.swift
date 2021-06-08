@@ -10,10 +10,8 @@ import UIKit
 class historialMeditacionesTableViewController: UITableViewController {
     
     var listaMeditaciones = [Meditacion(nombreMeditacion: "Bienestar", tipoMeditacion: "chill", ritmoCardIni: 84, ritmoCardFin: 75, nota: "Mejorando mi ser", estadoAnimo: "feliz", fecha: "11/02/2021 19:00"), Meditacion(nombreMeditacion: "Revitalizandonos", tipoMeditacion: "Mantra", ritmoCardIni: 82, ritmoCardFin: 87, estadoAnimo: "regular", fecha: "22/04/2021 11:00")]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         preferredContentSize = CGSize(width: view.frame.size.width * 0.9, height: view.frame.size.height / 2)
     }
 
@@ -27,10 +25,6 @@ class historialMeditacionesTableViewController: UITableViewController {
         super.viewWillDisappear(animated)
     }
     
-    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        preferredContentSize = CGSize(width: view.frame.size.width * 0.9, height: view.frame.size.height / 2)
-        
-    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
