@@ -12,11 +12,12 @@ class Evento: NSObject {
     var idEvento: Int
     var imagen: UIImage
     var fecha : String
+    var sortingDate : Date
     var descripcion : String
     var lugar : String
     var isRegistered : Bool
     
-    init(nombreEvento: String, idEvento: Int,imagen: UIImage, fecha: String, descripcion: String, lugar: String, isRegistered: Bool) {
+    init(nombreEvento: String, idEvento: Int,imagen: UIImage, fecha: String, descripcion: String, lugar: String, isRegistered: Bool, sortingDate: Date) {
         self.nombreEvento = nombreEvento
         self.idEvento = idEvento
         self.fecha = fecha
@@ -24,5 +25,6 @@ class Evento: NSObject {
         self.isRegistered = isRegistered
         self.imagen = imagen
         self.lugar = lugar
+        self.sortingDate = sortingDate
     }
 }

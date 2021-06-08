@@ -68,12 +68,12 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
                     deleteDate += (86400 * Double(TTL))
                     
                     var aDate = fecha.dateValue()
-                    if (deleteDate > aDate){
+                    if (deleteDate > aDate && Date() >= aDate){
                         let formatter = DateFormatter()
                         formatter.dateFormat = "MMM d, h:mm a"
                         
                         let formattedTimeZoneStr = formatter.string(from: aDate)
-                        let newDate = Notificacion(fecha: formattedTimeZoneStr, title: title, desc: desc)
+                        let newDate = Notificacion(fecha: formattedTimeZoneStr, title: title, desc: desc, sortDate: aDate)
                         
                         self.listaNotificaciones.append(newDate)
                     }
@@ -104,7 +104,6 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
                     let formattedTimeZoneStr = formatter.string(from: aDate)
                     
                     let dateNow = Date()
-                    
                     if dateNow <= deleteDate{
                         var urlToUiImage = (UIImage(named: "meditacion_4"))
                         
@@ -118,10 +117,13 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
                     }
                         
                         //print(formattedTimeZoneStr)
-                        let newEvento = Evento(nombreEvento: nombre, idEvento: count,imagen: urlToUiImage!, fecha: formattedTimeZoneStr, descripcion: desc, lugar: lugar ?? "No Especificado" ,isRegistered: false)
+                        let newEvento = Evento(nombreEvento: nombre, idEvento: count,imagen: urlToUiImage!, fecha: formattedTimeZoneStr, descripcion: desc, lugar: lugar ?? "No Especificado",isRegistered: false, sortingDate: aDate)
                         self.listaEventos.append(newEvento)
                     }
                 }
+            }
+            self.listaEventos.sort{
+                $0.sortingDate < $1.sortingDate
             }
             self.collectionView.reloadData()
         }

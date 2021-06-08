@@ -16,7 +16,7 @@ class ViewControllerNotificacion: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         listaNotificaciones.sort{
-            $0.fecha < $1.fecha
+            $0.sortDate > $1.sortDate
         }
         print("notis:")
         print(userReference)
