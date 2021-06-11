@@ -38,6 +38,7 @@
 		7539E3BF2627F35400266963 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539E3BE2627F35400266963 /* EventCollectionViewCell.swift */; };
 		755F4BC2264C87FC007EAFCA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 755F4BC1264C87FC007EAFCA /* GoogleService-Info.plist */; };
 		755F4BC6264C930E007EAFCA /* EventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F4BC5264C930E007EAFCA /* EventoViewController.swift */; };
+		75B3B3DC2672C6610078C7AC /* CreditosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B3B3DB2672C6610078C7AC /* CreditosViewController.swift */; };
 		75B7EA0A266EF35200BC8345 /* NotificacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7EA09266EF35200BC8345 /* NotificacionTableViewCell.swift */; };
 		75B7EA11266EFAA100BC8345 /* Notificacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7EA10266EFAA100BC8345 /* Notificacion.swift */; };
 		BE66B5A12565A56F00A5FB61 /* ViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE66B5A02565A56F00A5FB61 /* ViewController5.swift */; };
@@ -85,6 +86,7 @@
 		7539E3BE2627F35400266963 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		755F4BC1264C87FC007EAFCA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		755F4BC5264C930E007EAFCA /* EventoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoViewController.swift; sourceTree = "<group>"; };
+		75B3B3DB2672C6610078C7AC /* CreditosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditosViewController.swift; sourceTree = "<group>"; };
 		75B7EA09266EF35200BC8345 /* NotificacionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificacionTableViewCell.swift; sourceTree = "<group>"; };
 		75B7EA10266EFAA100BC8345 /* Notificacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificacion.swift; sourceTree = "<group>"; };
 		7E7CCDBBDA0213AE21A45C45 /* Pods-PuntoBlanco_v_0.0.1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoBlanco_v_0.0.1.debug.xcconfig"; path = "Target Support Files/Pods-PuntoBlanco_v_0.0.1/Pods-PuntoBlanco_v_0.0.1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				755F4BC5264C930E007EAFCA /* EventoViewController.swift */,
 				750C224B264CB0AE0049D612 /* MeditacionViewController.swift */,
 				75B7EA09266EF35200BC8345 /* NotificacionTableViewCell.swift */,
+				75B3B3DB2672C6610078C7AC /* CreditosViewController.swift */,
 			);
 			path = PuntoBlanco_v_0.0.1;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				4F69D82B253D2CE400C3863F /* ConfiguracionViewController.swift in Sources */,
 				4FC158C9256B0B92005B6A90 /* TableViewControllerEventos.swift in Sources */,
 				4F69D827253D205C00C3863F /* Meditacion.swift in Sources */,
+				75B3B3DC2672C6610078C7AC /* CreditosViewController.swift in Sources */,
 				BE73D8E92552F2B8002019D2 /* ViewController3.swift in Sources */,
 				4F69D823253D1F2800C3863F /* Evento.swift in Sources */,
 				755F4BC6264C930E007EAFCA /* EventoViewController.swift in Sources */,

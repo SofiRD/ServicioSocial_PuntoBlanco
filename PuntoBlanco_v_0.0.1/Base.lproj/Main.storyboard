@@ -1775,6 +1775,115 @@ CQ
             </objects>
             <point key="canvasLocation" x="4654" y="-671"/>
         </scene>
+        <!--Creditos View Controller-->
+        <scene sceneID="NLP-No-Qgh">
+            <objects>
+                <viewController id="8fU-vd-Shd" customClass="CreditosViewController" customModule="PuntoBlanco_v_0_0_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r1P-dc-nee">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="780"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8d-DZ-MaQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="780"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJX-hP-Ohu">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="817.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aplicación desarrollada por:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igf-q1-cq9">
+                                                <rect key="frame" x="56.5" y="100" width="262.5" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apoyada por la visión de: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtO-Ux-drf">
+                                                <rect key="frame" x="56.5" y="359" width="262.5" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMb-0V-DWh">
+                                                <rect key="frame" x="56.5" y="145.5" width="262.5" height="113.5"/>
+                                                <string key="text">Ing. Julio Rubio 
+Ing. Luis Gartner
+Ing. Victor Villareal 
+Ing. Andrea Ramirez
+Ing. Sofia Dorst</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Br5-TB-nUg">
+                                                <rect key="frame" x="56.5" y="404.5" width="262.5" height="101.5"/>
+                                                <string key="text">Dra. Eloisa Olivia Heredia Escorza  Lic. Paloma Esmeralda Lerma Villegas
+</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y empleando como asesor(a) a:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIA-aV-m57">
+                                                <rect key="frame" x="56.5" y="606" width="262.5" height="50.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ing. Yolanda Martínez Treviño, M.C." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNo-KF-4w7">
+                                                <rect key="frame" x="56.5" y="676.5" width="262.5" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.25824141499999997" green="0.70509904619999997" blue="0.68896746639999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Igf-q1-cq9" firstAttribute="width" secondItem="fJX-hP-Ohu" secondAttribute="width" multiplier="0.7" id="3BE-ox-nGy"/>
+                                            <constraint firstItem="LNo-KF-4w7" firstAttribute="width" secondItem="fJX-hP-Ohu" secondAttribute="width" multiplier="0.7" id="7yI-jL-MkR"/>
+                                            <constraint firstAttribute="bottom" secondItem="LNo-KF-4w7" secondAttribute="bottom" constant="100" id="FZc-nR-DSf"/>
+                                            <constraint firstItem="Br5-TB-nUg" firstAttribute="centerX" secondItem="fJX-hP-Ohu" secondAttribute="centerX" id="O3Y-K3-xZo"/>
+                                            <constraint firstItem="ZMb-0V-DWh" firstAttribute="centerX" secondItem="fJX-hP-Ohu" secondAttribute="centerX" id="OSz-9t-F12"/>
+                                            <constraint firstItem="AtO-Ux-drf" firstAttribute="width" secondItem="fJX-hP-Ohu" secondAttribute="width" multiplier="0.7" id="Rf3-TN-RUh"/>
+                                            <constraint firstItem="SIA-aV-m57" firstAttribute="centerX" secondItem="fJX-hP-Ohu" secondAttribute="centerX" id="SbZ-u7-wZ1"/>
+                                            <constraint firstItem="Br5-TB-nUg" firstAttribute="width" secondItem="fJX-hP-Ohu" secondAttribute="width" multiplier="0.7" id="Vd9-Rv-dO5"/>
+                                            <constraint firstItem="Igf-q1-cq9" firstAttribute="centerX" secondItem="fJX-hP-Ohu" secondAttribute="centerX" id="Vgw-nB-5QJ"/>
+                                            <constraint firstItem="ZMb-0V-DWh" firstAttribute="width" secondItem="fJX-hP-Ohu" secondAttribute="width" multiplier="0.7" id="ZyF-wB-mBF"/>
+                                            <constraint firstItem="LNo-KF-4w7" firstAttribute="centerX" secondItem="fJX-hP-Ohu" secondAttribute="centerX" id="eFe-Ex-rXN"/>
+                                            <constraint firstItem="Br5-TB-nUg" firstAttribute="top" secondItem="AtO-Ux-drf" secondAttribute="bottom" constant="20" id="fAu-iV-L2J"/>
+                                            <constraint firstItem="SIA-aV-m57" firstAttribute="width" secondItem="fJX-hP-Ohu" secondAttribute="width" multiplier="0.7" id="fST-jh-Wty"/>
+                                            <constraint firstItem="AtO-Ux-drf" firstAttribute="top" secondItem="ZMb-0V-DWh" secondAttribute="bottom" constant="100" id="h7G-Xu-WlM"/>
+                                            <constraint firstItem="Igf-q1-cq9" firstAttribute="top" secondItem="fJX-hP-Ohu" secondAttribute="top" constant="100" id="hfv-Zw-dW0"/>
+                                            <constraint firstItem="AtO-Ux-drf" firstAttribute="centerX" secondItem="fJX-hP-Ohu" secondAttribute="centerX" id="o1o-lt-WBW"/>
+                                            <constraint firstItem="ZMb-0V-DWh" firstAttribute="top" secondItem="Igf-q1-cq9" secondAttribute="bottom" constant="20" id="uYi-Wj-uTl"/>
+                                            <constraint firstItem="SIA-aV-m57" firstAttribute="top" secondItem="Br5-TB-nUg" secondAttribute="bottom" constant="100" id="wDe-hO-iOq"/>
+                                            <constraint firstItem="LNo-KF-4w7" firstAttribute="top" secondItem="SIA-aV-m57" secondAttribute="bottom" constant="20" id="zwU-yg-rkT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fJX-hP-Ohu" firstAttribute="height" secondItem="H8d-DZ-MaQ" secondAttribute="height" priority="500" id="AHO-JE-aq2"/>
+                                    <constraint firstItem="fJX-hP-Ohu" firstAttribute="width" secondItem="H8d-DZ-MaQ" secondAttribute="width" id="P0H-BB-hCz"/>
+                                    <constraint firstAttribute="trailing" secondItem="fJX-hP-Ohu" secondAttribute="trailing" id="Q2G-P0-9rG"/>
+                                    <constraint firstAttribute="bottom" secondItem="fJX-hP-Ohu" secondAttribute="bottom" id="mkc-mB-bbx"/>
+                                    <constraint firstItem="fJX-hP-Ohu" firstAttribute="top" secondItem="H8d-DZ-MaQ" secondAttribute="top" id="o7H-ue-7cO"/>
+                                    <constraint firstItem="fJX-hP-Ohu" firstAttribute="leading" secondItem="H8d-DZ-MaQ" secondAttribute="leading" id="vZF-pl-hrH"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="SE0-md-Pv7"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="s4Q-Zo-MA5"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kc1-Ot-FLT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kc1-Ot-FLT" firstAttribute="bottom" secondItem="H8d-DZ-MaQ" secondAttribute="bottom" id="6U9-55-3wE"/>
+                            <constraint firstItem="H8d-DZ-MaQ" firstAttribute="leading" secondItem="Kc1-Ot-FLT" secondAttribute="leading" id="Dkt-JZ-YsU"/>
+                            <constraint firstItem="Kc1-Ot-FLT" firstAttribute="trailing" secondItem="H8d-DZ-MaQ" secondAttribute="trailing" id="ty5-Oi-egE"/>
+                            <constraint firstItem="H8d-DZ-MaQ" firstAttribute="top" secondItem="Kc1-Ot-FLT" secondAttribute="top" id="yju-kb-eed"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="375" height="800"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p82-26-hw7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="-732.23388305847084"/>
+        </scene>
         <!--Configuracion View Controller-->
         <scene sceneID="vpO-FD-dLg">
             <objects>
@@ -1827,6 +1936,16 @@ CQ
                                     <constraint firstAttribute="width" constant="264" id="ROx-Ge-L0d"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uS0-uw-Kws">
+                                <rect key="frame" x="75" y="572" width="225" height="30"/>
+                                <color key="backgroundColor" red="0.22179281710000001" green="0.60719805959999995" blue="0.59509754179999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Creditos">
+                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8fU-vd-Shd" kind="showDetail" id="QP1-6e-Zg6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hY1-c8-46q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1834,10 +1953,13 @@ CQ
                             <constraint firstItem="hY1-c8-46q" firstAttribute="trailing" secondItem="rW8-vb-IDi" secondAttribute="trailing" constant="56" id="138-8I-6Yy"/>
                             <constraint firstItem="Aqt-m2-5v7" firstAttribute="top" secondItem="onA-Tc-1Ha" secondAttribute="bottom" constant="19" id="2iZ-ZU-aik"/>
                             <constraint firstItem="rW8-vb-IDi" firstAttribute="top" secondItem="Wth-7d-Vdg" secondAttribute="bottom" constant="15" id="3P1-xH-M4D"/>
+                            <constraint firstItem="uS0-uw-Kws" firstAttribute="centerX" secondItem="hY1-c8-46q" secondAttribute="centerX" id="89T-2r-8n2"/>
                             <constraint firstItem="prR-yP-pyJ" firstAttribute="top" secondItem="gwT-gQ-Kow" secondAttribute="bottom" constant="15" id="8Wt-Ej-HLD"/>
                             <constraint firstItem="prR-yP-pyJ" firstAttribute="leading" secondItem="hY1-c8-46q" secondAttribute="leading" constant="55" id="9HG-bY-HOA"/>
                             <constraint firstItem="rW8-vb-IDi" firstAttribute="leading" secondItem="hY1-c8-46q" secondAttribute="leading" constant="55" id="CXK-ZI-QfF"/>
+                            <constraint firstItem="hY1-c8-46q" firstAttribute="bottom" secondItem="uS0-uw-Kws" secondAttribute="bottom" constant="45" id="IWz-Ya-VBO"/>
                             <constraint firstItem="gwT-gQ-Kow" firstAttribute="top" secondItem="Aqt-m2-5v7" secondAttribute="bottom" constant="34" id="KQH-vg-hcz"/>
+                            <constraint firstItem="uS0-uw-Kws" firstAttribute="width" secondItem="wUt-wJ-CS9" secondAttribute="width" multiplier="0.6" id="LUN-7w-2yP"/>
                             <constraint firstItem="hY1-c8-46q" firstAttribute="trailing" secondItem="prR-yP-pyJ" secondAttribute="trailing" constant="55" id="M0b-sy-tBl"/>
                             <constraint firstItem="onA-Tc-1Ha" firstAttribute="top" secondItem="hY1-c8-46q" secondAttribute="top" id="N8S-dm-mJq"/>
                             <constraint firstItem="hY1-c8-46q" firstAttribute="trailing" secondItem="Wth-7d-Vdg" secondAttribute="trailing" constant="172" id="OfN-Ws-Oh8"/>
@@ -2388,7 +2510,7 @@ CQ
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7Fl-V8-B2l"/>
+        <segue reference="dYv-2Z-K4t"/>
         <segue reference="a7I-cp-xUG"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -2412,6 +2534,9 @@ CQ
         </systemColor>
         <systemColor name="secondarySystemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

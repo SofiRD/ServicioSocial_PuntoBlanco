@@ -14,7 +14,7 @@ import Firebase
 
 class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPopoverPresentationControllerDelegate, UICollectionViewDataSource,UICollectionViewDelegate{
     
-    //conexciones con storyboard para dar aspecto redondo a pantalla
+    //conecciones con storyboard para dar aspecto redondo a pantalla
     @IBOutlet weak var btMeditacion: UIButton!
     @IBOutlet weak var btHistorial: UIButton!
     @IBOutlet weak var btEstadisticas: UIButton!
@@ -52,6 +52,8 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
         
         lbNombreUsuario.layer.cornerRadius = 5
         lbNombreUsuario.clipsToBounds = true
+        
+        //Conexion a base de datos para obtener notificaciones
         let db = Firestore.firestore()
         db.collection("Notificaciones").getDocuments(){
             (QuerySnapshot,err) in
@@ -80,6 +82,7 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
                 }
             }
         }
+        //Conexion a base de datos para obtener eventos
         db.collection("Eventos").getDocuments(){
             (QuerySnapshot,err) in
             if let err = err{
