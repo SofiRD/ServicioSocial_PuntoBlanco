@@ -25,6 +25,8 @@
 		4FC158C9256B0B92005B6A90 /* TableViewControllerEventos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC158C8256B0B92005B6A90 /* TableViewControllerEventos.swift */; };
 		4FC158CB256B11A1005B6A90 /* TableViewControllerRetos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC158CA256B11A1005B6A90 /* TableViewControllerRetos.swift */; };
 		4FC158CD256B1202005B6A90 /* ViewControllerRetosInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC158CC256B1202005B6A90 /* ViewControllerRetosInfo.swift */; };
+		5773799E2673DA9B00DDA666 /* MeditacionesSemana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773799D2673DA9B00DDA666 /* MeditacionesSemana.swift */; };
+		577379A12673E6AC00DDA666 /* Ritmo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577379A02673E6AC00DDA666 /* Ritmo.swift */; };
 		750791E226420EDB008DF5F0 /* NotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750791E126420EDB008DF5F0 /* NotaViewController.swift */; };
 		750C224C264CB0AE0049D612 /* MeditacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750C224B264CB0AE0049D612 /* MeditacionViewController.swift */; };
 		750F8F70263121CE005411C2 /* historialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750F8F6F263121CE005411C2 /* historialViewController.swift */; };
@@ -73,6 +75,8 @@
 		4FC158C8256B0B92005B6A90 /* TableViewControllerEventos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerEventos.swift; sourceTree = "<group>"; };
 		4FC158CA256B11A1005B6A90 /* TableViewControllerRetos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerRetos.swift; sourceTree = "<group>"; };
 		4FC158CC256B1202005B6A90 /* ViewControllerRetosInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRetosInfo.swift; sourceTree = "<group>"; };
+		5773799D2673DA9B00DDA666 /* MeditacionesSemana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditacionesSemana.swift; sourceTree = "<group>"; };
+		577379A02673E6AC00DDA666 /* Ritmo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ritmo.swift; sourceTree = "<group>"; };
 		750791E126420EDB008DF5F0 /* NotaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotaViewController.swift; sourceTree = "<group>"; };
 		750C224B264CB0AE0049D612 /* MeditacionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditacionViewController.swift; sourceTree = "<group>"; };
 		750F8F6F263121CE005411C2 /* historialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historialViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				4F69D82A253D2CE400C3863F /* ConfiguracionViewController.swift */,
 				4F69D828253D29A700C3863F /* dashboardViewController.swift */,
 				4F69D822253D1F2800C3863F /* Evento.swift */,
+				5773799D2673DA9B00DDA666 /* MeditacionesSemana.swift */,
+				577379A02673E6AC00DDA666 /* Ritmo.swift */,
 				4F69D824253D1FDA00C3863F /* Reto.swift */,
 				4F69D826253D205C00C3863F /* Meditacion.swift */,
 				4F69D820253D1D3800C3863F /* Usuario.swift */,
@@ -349,6 +355,8 @@
 				BE66B5A5256630F000A5FB61 /* ViewControllerRitmoFinal.swift in Sources */,
 				750F8F7C26313075005411C2 /* hMeditacionesTableViewCell.swift in Sources */,
 				4F69D821253D1D3800C3863F /* Usuario.swift in Sources */,
+				5773799E2673DA9B00DDA666 /* MeditacionesSemana.swift in Sources */,
+				577379A12673E6AC00DDA666 /* Ritmo.swift in Sources */,
 				4FC158CB256B11A1005B6A90 /* TableViewControllerRetos.swift in Sources */,
 				4F544355253CDAF7005F9AF6 /* SceneDelegate.swift in Sources */,
 				7539E3BF2627F35400266963 /* EventCollectionViewCell.swift in Sources */,

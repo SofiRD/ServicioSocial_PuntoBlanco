@@ -780,6 +780,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wVu-or-cHv"/>
                     <connections>
+                        <outlet property="ritmoValor" destination="Ywe-8y-Ot8" id="F4v-XF-GMF"/>
                         <outlet property="scrollView" destination="rOR-vu-st1" id="oxh-Ow-QUC"/>
                         <outlet property="tempnavBar" destination="RZI-gb-kAc" id="U66-rt-Wr2"/>
                     </connections>

@@ -12,9 +12,13 @@ class Estadisticas: UIViewController, ChartViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var tempnavBar: UINavigationBar!
+    @IBOutlet weak var ritmoValor: UILabel!
     
     //var barChart = BarChartView()
     var barChart = LineChartView()
+    
+    var listaMeditaciones : [MeditacionesSemana] = []
+    var listaRitmos : [Ritmo] = []
 
     var userReference :DatabaseReference!
     override func viewDidLoad() {
@@ -38,11 +42,27 @@ class Estadisticas: UIViewController, ChartViewDelegate {
         
        // var entries = [BarChartDataEntry]()
         var entries = [ChartDataEntry]()
-        
+        /*
         for x in 0...10 {
             //entries.append(BarChartDataEntry(x: Double(x), y: Double(x)))
             entries.append(ChartDataEntry(x: Double(x), y: Double(x)))
         }
+         */
+        
+        for (index, med) in listaMeditaciones.enumerated() {
+            entries.append(ChartDataEntry(x: Double(index), y: Double(med.meditaciones)))
+        }
+        
+        var tempPromedio = 0.0
+        
+        for ritmo in listaRitmos {
+            tempPromedio = tempPromedio + ritmo.ritmo
+        }
+        
+        tempPromedio = tempPromedio / Double(listaRitmos.count)
+        var ritmoPromedio = Int(tempPromedio)
+        
+        ritmoValor.text = String(ritmoPromedio)
         
         //let set = BarChartDataSet( entries: entries )
         let set = LineChartDataSet( entries: entries )

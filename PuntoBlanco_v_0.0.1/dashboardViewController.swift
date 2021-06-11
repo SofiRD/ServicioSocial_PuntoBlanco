@@ -31,6 +31,8 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
     
     var index:Int = 0
     var listaEventos : [Evento] = []
+    var listaMeditaciones : [MeditacionesSemana] = []
+    var listaRitmos : [Ritmo] = []
     var listaNotificaciones : [Notificacion] = []
     
     override func viewDidLoad() {
@@ -126,6 +128,54 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
                 }
             }
             self.listaEventos.sort{
+                $0.sortingDate < $1.sortingDate
+            }
+            self.collectionView.reloadData()
+        }
+        
+        //Conexion a base de datos para obtener eventos
+        db.collection("Statistics").getDocuments(){
+            (QuerySnapshot,err) in
+            if let err = err{
+                print("error obteniendo estadisticas")
+            }else{
+                var count = 0
+                for document in QuerySnapshot!.documents{
+                    let date = NSDate()
+                    let unixtime = date.timeIntervalSince1970
+                    
+                    if document.data()["category"]! as! Int == 0 {
+                        let categoria = document.data()["category"]! as! Int
+                        let fecha = document.data()["createdDate"]! as! Timestamp
+                        let ritmo = document.data()["value"]! as! Double
+                        let aDate = fecha.dateValue()
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "MMM d, h:mm a"
+                        let formattedTimeZoneStr = formatter.string(from: aDate)
+                        let newRitmo = Ritmo(ritmo: ritmo, fecha: formattedTimeZoneStr, categoria: categoria, sortingDate: aDate)
+                        self.listaRitmos.append(newRitmo)
+
+                    }
+                    else if document.data()["category"]! as! Int == 3 {
+                        let categoria = document.data()["category"]! as! Int
+                        let fecha = document.data()["createdDate"]! as! Timestamp
+                        let meditaciones = document.data()["value"]! as! Int
+                        let aDate = fecha.dateValue()
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "MMM d, h:mm a"
+                        let formattedTimeZoneStr = formatter.string(from: aDate)
+                        let newMeditacionesSemana = MeditacionesSemana(meditaciones: meditaciones, fecha: formattedTimeZoneStr, categoria: categoria, sortingDate: aDate)
+                        self.listaMeditaciones.append(newMeditacionesSemana)
+
+                    }
+                    
+                }
+                
+            }
+            self.listaMeditaciones.sort{
+                $0.sortingDate < $1.sortingDate
+            }
+            self.listaRitmos.sort{
                 $0.sortingDate < $1.sortingDate
             }
             self.collectionView.reloadData()
@@ -250,8 +300,13 @@ class dashboardViewController: UIViewController, protocoloModificarPerfil, UIPop
             print(userReference)
             vista.userReference = userReference
         } else if segue.identifier == "estadisticas"{
-            let vistaNotificacion = segue.destination as! Estadisticas
-            vistaNotificacion.userReference = userReference
+            let vistaEstadisticas = segue.destination as! Estadisticas
+            print(userReference)
+            vistaEstadisticas.userReference = userReference
+            vistaEstadisticas.listaRitmos = listaRitmos
+            vistaEstadisticas.listaMeditaciones = listaMeditaciones
+
+            
         }
          else if segue.identifier == "eventoProx"{
              let vistaDetalle = segue.destination as! ViewControllerEventosInfo
